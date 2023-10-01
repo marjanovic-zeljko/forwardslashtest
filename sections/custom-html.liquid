@@ -1,0 +1,2358 @@
+{% liquid 
+   assign sectionID = 'shopify-section-' | append: section.id 
+    assign sirinaSekcije = section.settings.section_width 
+    assign punaSirinaKontenta = section.settings.content_fullwidth
+     assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+     assign maksSirinaKontenta = section.settings.content_max_width
+     assign maksSirinaKontentamobilni = section.settings.content_max_width_mobile
+     assign maksSirinaKontentaunutramobilni = section.settings.content_max_width_mobile_inner
+     assign bojapozadinesekcije = section.settings.section_background_color
+     assign bojaunutrasnjosti = section.settings.section_inner_color
+     assign bojaunutrasnjostimobilni = section.settings.section_inner_color_mobile
+
+     
+      assign slikapozadinesekcije = section.settings.urlSlike
+      assign radioDugmeFormat = section.settings.pickBackground
+    assign podesavanjegornjemarginesekcijacela= section.settings.section_margin_top
+	assign podesavanjedonjemarginesekcijacela = section.settings.section_margin_bottom
+    assign podesavanjegornjegpadingacelasekcija = section.settings.section_padding_top
+    assign podesavanjedonjegpadingacelasekcija = section.settings.section_padding_bottom
+    assign horizontalnipadingcelasekcija = section.settings.section_padding_horizontal
+
+    assign podesavanjegornjemarginesekcijacelamobilni = section.settings.section_margin_top_mobile
+	assign podesavanjedonjemarginesekcijacelamobilni = section.settings.section_margin_bottom_mobile
+    assign podesavanjegornjegpadingacelasekcijamobilni = section.settings.section_padding_top_mobile
+    assign podesavanjedonjegpadingacelasekcijamobilni = section.settings.section_padding_bottom_mobile
+    assign horizontalnipadingcelasekcijamobilni = section.settings.section_padding_horizontal_mobile
+
+    assign maksSirinaKontentaunutra = section.settings.content_max_width_inner
+    assign podesavanjegornjemarginesekcijaunutra = section.settings.section_margin_top_inner
+	assign podesavanjedonjemarginesekcijaunutra = section.settings.section_margin_bottom_inner
+    assign podesavanjegornjegpadingaunutrasekcija = section.settings.section_padding_top_inner
+    assign podesavanjedonjegpadingaunutrasekcija = section.settings.section_padding_bottom_inner
+    assign horizontalnipadingunutrasekcija = section.settings.section_padding_horizontal_inner
+    
+    assign preduslovzaHelement = section.settings.section_title
+    assign velicinaHelementa = section.settings.section_title_type
+    assign bojaHteksta = section.settings.section_title_color
+    assign pozicioniranjeHelementa = section.settings.section_title_alignment
+    assign kastomfontH = section.settings.section_title_custom_font
+    assign difoltnifontH = section.settings.section_title_font
+    assign imefontaH = section.settings.section_title_font_name
+    assign debljinafontaH = section.settings.section_title_font_weight
+    assign velicinafontaracunarH = section.settings.section_title_font_size
+    assign razmakizmedjuslovaracunarH = section.settings.section_title_line_height
+    assign razmakizmedjureciracunarH = section.settings.section_title_letter_spacing
+    assign pozicioniranjePelementa = section.settings.section_paragraph_alignment
+    assign preduslovzaPelement = section.settings.section_textblock
+    assign bojatekstaPelementa = section.settings.section_textblock_color
+    assign kastomPfont = section.settings.section_textblock_custom_font
+    assign difoltnifontzaP = section.settings.section_textblock_font
+    assign imefontaPelementa = section.settings.section_textblock_font_name
+    assign debljinafontaPelementa = section.settings.section_textblock_font_weight
+    assign velicinafontaPelementa = section.settings.section_textblock_font_size
+    assign razmakizmedjulinijaPfont = section.settings.section_textblock_line_height
+    assign razmakizmedjuslovaPelement= section.settings.section_textblock_letter_spacing
+    assign kastomFontDugme = section.settings.slide_button_custom_font
+    assign fontDugme = section.settings.slide_button_font
+    assign imeFontaDugme = section.settings.slide_button_font_name
+    assign debljinaFontaDugme = section.settings.slide_button_font_weight
+    assign DugmeVelicinaFonta = section.settings.slide_button_font_size
+    assign DugmeVelicinaFontaMobilni = section.settings.slide_button_font_size_mobile
+    assign dugmeRazmakIzmedjuSlova = section.settings.slide_button_letter_spacing
+    assign dugmeRazmakIzmedjuSlovaMobilni = section.settings.slide_button_letter_spacing_mobile
+    assign dugmePadingHorizontalni = section.settings.slide_button_padding_horizontal
+    assign dugmePadingVertikalni =  section.settings.slide_button_padding_vertical
+    assign dugmePaddingGornja = section.settings.slide_button_margin_top
+    assign dugmePaddingDonja = section.settings.slide_button_margin_bottom
+    assign dugmeBorder = section.settings.slide_button_border
+    assign dugmeBorderRadius = section.settings.slide_button_radius
+    assign dugmeBojaPozadine = section.settings.slide_button_background_color
+    assign dugmeBojaPozadineHover = section.settings.slide_button_background_color_hover
+    assign dugmeBojateksta = section.settings.slide_button_text_color
+    assign dugmeBojatekstaHover = section.settings.slide_button_text_color_hover
+    assign dugmeBorderBoja = section.settings.slide_button_border_color
+    assign dugmeBorderBojaHover = section.settings.slide_button_border_color_hover
+   assign dugmePocetniTekst = section.settings.button_label
+   assign dugmeLink = section.settings.button_url
+    
+    assign sirinaOdgovora = section.settings.section_width_answer 
+    assign headlineTopPadding = section.settings.headline_margin_top
+    assign headlineBottomPadding = section.settings.headline_margin_bottom
+    assign headlineLeftPadding = section.settings.headline_margin_left
+    assign headlineRightPadding = section.settings.headline_margin_right
+    assign headlineTopPaddingMobile = section.settings.headline_margin_top_mobile
+    assign headlineBottomPaddingMobile = section.settings.headline_margin_bottom_mobile
+    assign headlineLeftPaddingMobile = section.settings.headline_margin_left_mobile
+    assign headlineRightPaddingMobile = section.settings.headline_margin_right_mobile
+    assign subheadlineTopPadding = section.settings.subheadline_margin_top
+    assign subheadlineBottomPadding = section.settings.subheadline_margin_bottom
+    assign subheadlineLeftPadding = section.settings.subheadline_margin_left
+    assign subheadlineRightPadding = section.settings.subheadline_margin_right
+    assign subheadlineTitle = section.settings.subheadline_title
+    assign subheadlinevelicinaHelementa = section.settings.subheadline_type
+    assign subheadlinebojaHteksta = section.settings.subheadline_color
+    assign subheadlinepozicioniranjeHelementa = section.settings.subheadline_alignment
+    assign subheadlinekastomfontH = section.settings.subheadline_custom_font       
+    assign subheadlinedifoltnifontH = section.settings.subheadline_font           
+    assign subheadlineimefontaH = section.settings.subheadline_font_name
+    assign subheadlinedebljinafontaH = section.settings.subheadline_font_weight
+    assign subheadlinevelicinafontaracunarH = section.settings.subheadline_font_size
+    assign subheadlinerazmakizmedjuslovaracunarH = section.settings.subheadline_line_height
+    assign subheadlinerazmakizmedjureciracunarH = section.settings.subheadline_letter_spacing
+    assign paragraphTopPadding = section.settings.paragraph_margin_top
+    assign paragraphBottomPadding = section.settings.paragraph_margin_bottom
+    assign paragraphLeftPadding = section.settings.paragraph_margin_left
+    assign paragraphRightPadding = section.settings.paragraph_margin_right
+    assign dugmepozicioniranje = section.settings.button_alignment
+    
+    assign bojapozadinesekcijeMobilni = section.settings.section_background_color_mobile
+  
+    assign preduslovzaHelementMobilni = section.settings.section_title_mobile
+    assign velicinaHelementaMobilni = section.settings.section_title_type_mobile
+    assign bojaHtekstaMobilni = section.settings.section_title_color_mobile
+    assign pozicioniranjeHelementaMobilni = section.settings.section_title_alignment_mobile
+    assign kastomfontHMobilni = section.settings.section_title_custom_font_mobile
+    assign difoltnifontHMobilni = section.settings.section_title_font_mobile
+    assign imefontaHMobilni = section.settings.section_title_font_name_mobile
+    assign debljinafontaHMobilni = section.settings.section_title_font_weight_mobile
+    assign velicinafontaracunarHMobilni = section.settings.section_title_font_size_mobile
+    assign razmakizmedjuslovaracunarHMobilni = section.settings.section_title_line_height_mobile
+    assign razmakizmedjureciracunarHMobilni = section.settings.section_title_letter_spacing_mobile
+
+    assign paddingGornjiHeading = section.settings.headline_padding_top_mobile_inner
+     assign paddingDonjiHeading = section.settings.headline_padding_bottom_mobile_inner
+      assign paddingLeviHeading = section.settings.headline_padding_left_mobile_inner
+       assign paddingDesniHeading = section.settings.headline_padding_right_mobile_inner
+
+    assign subheadlinebojaHtekstamobilni = section.settings.subheadline_color_mobile
+    assign subheadlinepozicioniranjeHelementamobilni = section.settings.subheadline_alignment_mobile
+    assign subheadlinekastomfontHmobilni = section.settings.subheadline_custom_font_mobile
+    assign subheadlinedifoltnifontHmobilni = section.settings.subheadline_font_mobile
+    assign subheadlineimefontaHmobilni = section.settings.subheadline_font_name_mobile
+    assign subheadlinedebljinafontaHmobilni = section.settings.subheadline_font_weight_mobile
+    assign subheadlinevelicinafontaracunarHmobilni = section.settings.subheadline_font_size_mobile
+    assign subheadlinerazmakizmedjuslovaracunarHmobilni = section.settings.subheadline_line_height_mobile
+    assign subheadlinerazmakizmedjureciracunarHmobilni = section.settings.subheadline_letter_spacing_mobile
+    assign subheadlinepaddingtopmobilni = section.settings.subheadline_padding_top_mobile
+    assign subheadlinepaddingbottommobilni = section.settings.subheadline_padding_bottom_mobile
+    assign subheadlinepaddingleftmobilni = section.settings.subheadline_padding_left_mobile
+    assign subheadlinepaddingrightmobilni = section.settings.subheadline_padding_right_mobile
+
+
+    assign pozicioniranjePelementaMobilni  = section.settings.section_paragraph_alignment_mobile
+    assign preduslovzaPelementMobilni  = section.settings.section_textblock_mobile
+    assign bojatekstaPelementaMobilni  = section.settings.section_textblock_color_mobile
+    assign kastomPfontMobilni  = section.settings.section_textblock_custom_font_mobile
+    assign difoltnifontzaPMobilni  = section.settings.section_textblock_font_mobile
+    assign imefontaPelementaMobilni  = section.settings.section_textblock_font_name_mobile
+    assign debljinafontaPelementaMobilni  = section.settings.section_textblock_font_weight_mobile
+    assign velicinafontaPelementaMobilni  = section.settings.section_textblock_font_size_mobile
+    assign razmakizmedjulinijaPfontMobilni  = section.settings.section_textblock_line_height_mobile
+    assign razmakizmedjuslovaPelementMobilni = section.settings.section_textblock_letter_spacing_mobile
+
+    assign paragraphTopPadingMobilni = section.settings.paragraph_padding_top_mobile
+    assign paragraphBottomPadingMobilni = section.settings.paragraph_padding_bottom_mobile
+    assign paragraphLeftPadingMobilni = section.settings.paragraph_padding_left_mobile
+    assign paragraphRightPadingMobilni = section.settings.paragraph_padding_right_mobile
+
+    
+    assign kastomFontDugmeMobilni = section.settings.slide_button_custom_font_mobile
+    assign fontDugmeMobilni = section.settings.slide_button_font_mobile
+    assign imeFontaDugmeMobilni = section.settings.slide_button_font_name_mobile
+    assign debljinaFontaDugmeMobilni = section.settings.slide_button_font_weight_mobile
+    assign DugmeVelicinaFontaMobilni = section.settings.slide_button_font_size_mobile
+    assign dugmeRazmakIzmedjuSlovaMobilni = section.settings.slide_button_letter_spacing_mobile
+    assign dugmePadingHorizontalniMobilni = section.settings.slide_button_padding_horizontal_mobile
+    assign dugmePadingVertikalniMobilni =  section.settings.slide_button_padding_vertical_mobile
+    assign dugmeMarginaGornjaMobilni = section.settings.slide_button_margin_top_mobile
+    assign dugmeMarginaDonjaMobilni = section.settings.slide_button_margin_bottom_mobile
+    assign dugmeMarginaLevaMobilni = section.settings.slide_button_margin_left_mobile
+    assign dugmeMarginaDesnaMobilni = section.settings.slide_button_margin_right_mobile
+    assign dugmeBorderMobilni = section.settings.slide_button_border_mobile
+    assign dugmeBorderRadiusMobilni = section.settings.slide_button_radius_mobile
+    assign dugmeBojaPozadineMobilni = section.settings.slide_button_background_color_mobile
+    assign dugmeBojaPozadineHoverMobilni = section.settings.slide_button_background_color_hover_mobile
+    assign dugmeBojatekstaMobilni = section.settings.slide_button_text_color_mobile
+    assign dugmeBojatekstaHoverMobilni = section.settings.slide_button_text_color_hover_mobile
+    assign dugmeBorderBojaMobilni = section.settings.slide_button_border_color_mobile
+    assign dugmeBorderBojaHoverMobilni = section.settings.slide_button_border_color_hover_mobile
+   assign dugmePocetniTekstMobilni = section.settings.button_label_mobile
+   assign dugmeLinkMobilni = section.settings.button_url_mobile
+    assign dugmepozicioniranjeMobilni = section.settings.button_alignment_mobile
+    assign kastomButtonfont = section.settings.button_custom_font
+    assign difoltnifontzaButton = section.settings.button_font
+    assign imefontaButtonelementa = section.settings.button_font_name
+    assign debljinaButtonFonta = section.settings.button_font_weight
+
+
+    assign desnamarginazadugme = section.settings.button_left_margin
+    assign levamarginazadugme = section.settings.button_right_margin
+    assign desnipadingzadugmemobilni  = section.settings.button_left_margin_mobile
+    assign desnipadingzadugmemobilni = section.settings.button_right_margin_mobile
+    %}
+    <span style = "color:red;">{{bojaPozadineOdgovora}}</span>
+<div class="UX-page-width-{{ sirinasekcije }} " id="{{divID}}">
+
+   {% if preduslovzaHelement != blank or preduslovzaPelement != blank or subheadlineTitle != blank %}
+        <div class="UX-custom-heading">
+            {% if preduslovzaHelement != blank %}
+                <{{velicinaHelementa}} class="section-title">{{preduslovzaHelement}}</{{velicinaHelementa}}>
+            {% endif %}
+            {% if subheadlineTitle != blank %}
+                      <{{subheadlinevelicinaHelementa}} class="section-subheadline">{{subheadlineTitle}}</{{subheadlinevelicinaHelementa}}>
+                        
+            {% endif %}
+            {% if preduslovzaPelement != blank %}
+                <div class="UX-custom-paragraph">
+                    {{preduslovzaPelement}}
+                </div>
+            {% endif %}
+     
+              {% if dugmePocetniTekst != blank %}
+                <div class="centeralign">
+                <a href="{{ dugmeLink }}" class="ux-btn">
+                {{ dugmePocetniTekst }}
+                 </a>
+                </div>
+              {% endif %}
+   
+
+<div class="Rte" style="text-align: center">
+      {{ section.settings.html }}
+    </div>
+                        
+        </div>
+          {% endif %}
+          
+{% if section.settings.open_blank %}  
+<script>
+const button = document.querySelector(".ux-btn");
+button.addEventListener("click", functionAtributte());
+function functionAtributte() {
+  button.setAttribute("target", "_blank");
+}
+
+</script>
+{% endif %}  
+  <style>
+section h1 ,section h2 ,section h3 ,section h4 ,section h5 ,section h6 ,section p {
+  margin:0;
+  padding:0;
+}  
+    #{{ sectionID }}{
+      display:flex;
+      justify-content: center;
+    }
+     {% if radioDugmeFormat == 'color' %}
+            #{{ sectionID }} {background-color: {{ bojapozadinesekcije }};}
+           {% elsif radioDugmeFormat == 'picture' %}
+            #{{sectionID}} .UX-page-width- { 
+              background:url("https://cdn.shopify.com/s/files/1/0587/5528/5026/{{slikapozadinesekcije}}"); 
+               background-repeat: no-repeat;
+               background-size: cover;
+              object-fit: cover;
+              background-attachment: fixed;
+              background-position: center;
+            }
+         {% endif %}
+ @media only screen and (min-width: 769px) {
+
+#{{sectionID}} .UX-page-width- {
+  background-color:{{bojaunutrasnjosti}};
+}
+   {% if kastomfontH %} 
+    {{ difoltnifontH | font_face }} 
+    {% endif %} 
+
+  
+    {% if kastomPfont %} 
+      {{ difoltnifontzaP | font_face }} 
+      {% endif %} 
+  
+      {% if slideTitleCustomFont %} 
+        {{ slideTitleFont | font_face }} 
+        {% endif %} 
+  
+        {% if slideTextblockCustomFont %}
+        {{ slideTextblockFont | font_face }} 
+        {% endif %}
+        
+        {% if kastomButtonFont %} 
+        {{ difoltnifontzaButton | font_face }}
+        {% endif %}
+     
+   #{{sectionID}} .UX-custom-heading .section-title { 
+{% if kastomfontH %}
+  {% if imefontaH != blank %} font-family:{{imefontaH}}; 
+    {% else %} font-family:{{difoltnifontH.family}}, {{difoltnifontH.fallback_families}}; 
+    {% endif %} 
+  {%endif%}
+}
+
+#{{ sectionID }} .UX-page-width-  div.UX-custom-heading {
+padding-top: {{ podesavanjegornjegpadingaunutrasekcija }}px;
+padding-bottom: {{ podesavanjedonjegpadingaunutrasekcija }}px;
+}
+   
+#{{ sectionID }} .ux-btn {
+      background-color:{{ dugmeBojaPozadine }};
+  {% if kastomButtonfont %}
+  {% if imefontaButtonelementa != blank %} font-family:{{imefontaButtonelementa}}; 
+    {% else %} font-family:{{difoltnifontzaButton.family}}, {{difoltnifontzaButton.fallback_families}}; 
+  
+    {% endif %} 
+  {%endif%}
+       font-weight: {{ debljinaButtonFonta }}
+    }
+   
+      
+  #{{ sectionID }} {
+      width:{{maksSirinaKontenta}}%;
+      margin: 0 auto;
+    }
+   
+ #{{ sectionID }} .UX-page-width- {
+   width:100%;
+   display:flex;
+   justify-content:center;
+ }
+   
+   #{{ sectionID }} .UX-custom-heading .section-title { 
+{% if velicinafontaracunarH!= 0 %} 
+  font-size: {{ velicinafontaracunarH }}px;
+{% endif %} 
+
+  {% if razmakizmedjuslovaracunarH!= 0 %}
+    line-height:{{ razmakizmedjuslovaracunarH }};
+  {% endif %} 
+    {% if razmakizmedjureciracunarH!= 0 %}
+      letter-spacing:{{ razmakizmedjureciracunarH }}px;
+    {% endif %} 
+     padding: {{headlineTopPadding}}px {{headlineRightPadding}}px {{headlineBottomPadding}}px {{headlineLeftPadding}}px;
+}
+
+{% if subheadlinekastomfontH %} 
+{{ subheadlinedifoltnifontH | font_face }} 
+{% endif %} 
+
+#{{ sectionID }} .UX-custom-heading .section-subheadline { 
+ {% if subheadlinekastomfontH %}
+  {% if subheadlineimefontaH != blank %} 
+  font-size:50px!important;
+  font-family:{{subheadlineimefontaH}}; 
+    {% else %} font-family:{{subheadlinedifoltnifontH.family}}, {{subheadlinedifoltnifontH.fallback_families}}; 
+    {% endif %} 
+  {%endif%}
+
+{% if subheadlinedebljinafontaH != "default" %}
+  font-weight: {{subheadlinedebljinafontaH}} !important;
+{%endif%} 
+  
+{% if subheadlinebojaHteksta contains '#' %} 
+  color:{{ subheadlinebojaHteksta }};
+{%endif%} 
+      
+       text-align:{{subheadlinepozicioniranjeHelementa}};
+{% if subheadlinevelicinafontaracunarH!= 0 %} 
+  font-size: {{ subheadlinevelicinafontaracunarH }}px;
+{% endif %} 
+
+  {% if subheadlinerazmakizmedjuslovaracunarH!= 0 %}
+    line-height:{{ subheadlinerazmakizmedjuslovaracunarH }};
+  {% endif %} 
+    {% if subheadlinerazmakizmedjureciracunarH!= 0 %}
+      letter-spacing:{{ subheadlinerazmakizmedjureciracunarH }}px;
+    {% endif %} 
+     padding: {{subheadlineTopPadding}}px {{subheadlineRightPadding}}px {{subheadlineBottomPadding}}px {{subheadlineLeftPadding}}px;
+}
+#{{ sectionID }} .UX-custom-heading .UX-custom-paragraph {
+  {% if kastomPfont %}
+  {% if imefontaPelementa != blank %} font-family:{{imefontaPelementa}}; 
+    {% else %} font-family:{{difoltnifontzaP.family}}, {{difoltnifontzaP.fallback_families}}; 
+    {% endif %} 
+  {%endif%}
+   padding: {{paragraphTopPadding}}px {{paragraphRightPadding}}px {{paragraphBottomPadding}}px {{paragraphLeftPadding}}px; 
+}
+
+       
+#{{ sectionID }}  { 
+  margin-top: {{ podesavanjegornjemarginesekcijacela }}px;
+  margin-bottom: {{ podesavanjedonjemarginesekcijacela }}px; 
+  padding: {{ podesavanjegornjegpadingacelasekcija }}px {{ horizontalnipadingcelasekcija }}px {{ podesavanjedonjegpadingacelasekcija }}px; 
+}
+#{{ sectionID }} .UX-page-width- { 
+  width:{{maksSirinaKontentaunutra}}%;
+  margin-top: {{ podesavanjegornjemarginesekcijaunutra }}px;
+  margin-bottom: {{ podesavanjedonjemarginesekcijaunutra }}px; 
+   
+}
+
+           
+#{{sectionID}} .UX-custom-heading .section-title,
+#{{sectionID}} .custom-description{
+  
+{% if kastomfontH %} 
+ {% if imefontaH != blank %} 
+   font-family:{{ imefontaH }}; 
+   {% else %} font-family:{{ preduslovzaHelement.family}}, {{ preduslovzaHelement.fallback_families }}; 
+  {% endif %} 
+{%endif%} 
+  
+{% if debljinafontaH != "default" %}
+  font-weight: {{debljinafontaH}} !important;
+{%endif%} 
+  text-align: {{ pozicioniranjeHelementa }};
+  
+{% if bojaHteksta contains '#' %} 
+  color:{{ bojaHteksta }};
+{%endif%} 
+
+  
+}
+   #{{ sectionID }} .UX-custom-paragraph {
+      {% if kastomPfonta %} 
+ {% if imefontaPelementa != blank %} 
+   font-family:{{ imefontaPelementa }}; 
+   {% else %} font-family:{{ preduslovzaPelement.family}}, {{ preduslovzaPelement.fallback_families }}; 
+  {% endif %} 
+{%endif%} 
+  
+{% if debljinafontaPelementa != "default" %}
+  font-weight: {{debljinafontaPelementa}} !important;
+{%endif%} 
+   text-align: {{ pozicioniranjePelementa }};
+{% if bojatekstaPelementa contains '#' %} 
+  color:{{ bojatekstaPelementa }};
+{%endif%} 
+} 
+
+#{{ sectionID }} .UX-custom-paragraph{ 
+{% if velicinafontaPelementa!= 0 %} 
+  font-size: {{ velicinafontaPelementa }}px;
+{% endif %} 
+
+  {% if razmakizmedjulinijaPfont != 0 %}
+    line-height:{{ razmakizmedjulinijaPfont }};
+  {% endif %} 
+    {% if razmakizmedjuslovaPelement!= 0 %}
+      letter-spacing:{{ razmakizmedjuslovaPelement }}px;
+    {% endif %} 
+}
+
+#{{ sectionID }} .UX-page-width- .centeralign {
+margin-left:{{ levamarginazadugme }}px;
+margin-right:{{ desnamarginazadugme }}px;
+}
+#{{ sectionID }} .UX-page-width- .centeralign .ux-btn { 
+
+{% if kastomFontDugme %} 
+  
+  {% if imeFontaDugme != blank %} 
+    font-family:{{ imeFontaDugme }}; 
+    {% else %} 
+    font-family:{{ fontDugme.family }}, {{ fontDugme.fallback_families }}; 
+   {% endif %} 
+{%endif%} 
+
+{% if fontDugmeWeight != "default" %} 
+  font-weight:{{ fontDugmeWeight }} !important;
+{%endif%} 
+  
+  color:{{ dugmeBojateksta }};
+  
+   {% if dugmeBorder != 0 %} 
+     border: {{ dugmeBorder }}px solid {{ dugmeBorderBoja }}; 
+   {% endif %} 
+  
+     border-radius:{{ dugmeBorderRadius }}px; 
+     padding:{{ dugmePadingVertikalni }}px {{ dugmePadingHorizontalni }}px; 
+     margin-bottom:0!important; line-height:initial!important; } 
+    
+#{{ sectionID }} .UX-page-width- .centeralign .ux-btn:hover {
+color:{{ dugmeBojatekstaHover }}; background-color:{{ dugmeBojaPozadineHover }};
+  
+     {% if dugmeBorder != 0 %}
+        border-color:{{ dugmeBorderBojaHover }};
+     {% endif %} }
+
+#{{ sectionID }} .UX-page-width- .centeralign {
+padding-top:{{ dugmePaddingGornja }}px; 
+padding-bottom: {{ dugmePaddingDonja }}px;
+}
+#{{ sectionID }} .UX-page-width- .centeralign {
+text-align: {{dugmepozicioniranje }};  
+}  
+    #{{ sectionID }} .UX-page-width- .centeralign .ux-btn  { 
+    {% if DugmeVelicinaFonta != 0 %}
+      font-size:{{ DugmeVelicinaFonta }}px;
+    {% endif %}
+    
+    
+      
+       {% if dugmeRazmakIzmedjuSlova != 0 %}
+         letter-spacing:{{ dugmeRazmakIzmedjuSlova }}px;
+      {% endif %} }
+
+   
+  }
+   @media only screen and (max-width: 768px) {
+  #{{ sectionID }} { 
+  margin-top: {{ podesavanjegornjemarginesekcijacelamobilni }}px!important;
+  margin-bottom: {{ podesavanjedonjemarginesekcijacelamobilni }}px!important; 
+  padding-top: {{ podesavanjegornjegpadingacelasekcijamobilni }}px!important; 
+  padding-bottom: {{ podesavanjedonjegpadingacelasekcijamobilni }}px!important; 
+}
+     #{{ sectionID }} .UX-custom-heading {
+      width:{{maksSirinaKontentamobilni}}%!important;
+       display:flex;
+       flex-direction:column;
+       margin:0 auto;
+    }
+  #{{ sectionID }} .UX-page-width- {
+    width:{{maksSirinaKontentaunutramobilni}}%!important;
+     display: flex;
+    justify-content: center;
+      margin:0 auto;
+  }
+     #{{sectionID}} .UX-custom-heading {
+    background-color:{{bojaunutrasnjostimobilni}};
+  }
+     
+       {% if kastomfontHMobilni %} 
+    {{ difoltnifontHMobilni | font_face }} 
+    {% endif %} 
+  
+    {% if kastomPfontMobilni %} 
+      {{ difoltnifontzaPMobilni | font_face }} 
+      {% endif %} 
+
+     
+      
+  
+      {% if slideTitleCustomFontMobilni %} 
+        {{ slideTitleFontMobilni | font_face }} 
+        {% endif %} 
+  
+        {% if slideTextblockCustomFontMobilni %}
+        {{ slideTextblockFontMobilni | font_face }} 
+        {% endif %}
+        
+        {% if kastomFontDugmeMobilni %} 
+        {{ fontDugmeMobilni | font_face }}
+        {% endif %}
+
+
+
+
+      #{{sectionID}} .UX-custom-heading .section-title { 
+{% if kastomfontHMobilni %}
+  {% if imefontaHMobilni != blank %} font-family:{{imefontaHMobilni}}; 
+    {% else %} font-family:{{difoltnifontHMobilni.family}}, {{difoltnifontHMobilni.fallback_families}}; 
+    {% endif %} 
+  {%endif%}
+}
+   
+  
+    
+
+     
+      #{{sectionID}} .UX-custom-paragraph { 
+{% if kastomPfontMobilni %}
+  {% if imefontaPelementaMobilni != blank %} font-family:{{imefontaPelementaMobilni}}; 
+    {% else %} font-family:{{difoltnifontzaPMobilni.family}}, {{difoltnifontzaPMobilni.fallback_families}}; 
+    {% endif %} 
+  {%endif%}
+}
+          
+      
+
+     
+     #{{ sectionID }} {
+       width:100%;
+       background-color: {{bojapozadinesekcijeMobilni}};
+     }
+
+  #{{sectionID}} .UX-custom-heading .section-title,
+#{{sectionID}} .custom-description{
+  
+  {% if kastomfontHMobilni %} 
+    {{ difoltnifontHMobilni | font_face }} 
+    {% endif %} 
+{% if kastomfontHMobilni %} 
+ {% if imefontaHMobilni != blank %} 
+   font-family:{{ imefontaHMobilni }}; 
+   {% else %} font-family:{{ preduslovzaHelementMobilni.family}}, {{ preduslovzaHelementMobilni.fallback_families }}; 
+  {% endif %} 
+{%endif%} 
+  
+{% if debljinafontaHMobilni != "default" %}
+  font-weight: {{debljinafontaHMobilni}} !important;
+{%endif%} 
+  
+  
+{% if bojaHtekstaMobilni contains '#' %} 
+  color:{{ bojaHtekstaMobilni }};
+{%endif%} 
+} 
+
+
+   #{{ sectionID }} .UX-custom-heading .section-title { 
+{% if velicinafontaracunarHMobilni != 0 %} 
+  font-size: {{ velicinafontaracunarHMobilni }}px;
+{% endif %} 
+
+  {% if razmakizmedjuslovaracunarHMobilni!= 0 %}
+    line-height:{{ razmakizmedjuslovaracunarHMobilni }};
+  {% endif %} 
+    {% if razmakizmedjureciracunarHMobilni != 0 %}
+      letter-spacing:{{ razmakizmedjureciracunarHMobilni }}px;
+    {% endif %} 
+     padding: {{paddingGornjiHeading}}px {{paddingDesniHeading}}px {{paddingDonjiHeading}}px {{paddingLeviHeading}}px;
+     text-align: {{ pozicioniranjeHelementaMobilni }};
+     }
+     {% if subheadlinekastomfontHmobilni %} 
+      {{ subheadlinedifoltnifontHmobilni | font_face }} 
+      {% endif %} 
+     #{{sectionID}} .UX-custom-heading .section-subheadline { 
+
+    {% if subheadlinekastomfontHmobilni %}
+     {% if subheadlineimefontaHmobilni != blank %} font-family:{{subheadlineimefontaHmobilni}} !important;  
+        {% else %} font-family:{{subheadlinedifoltnifontHmobilni.family}}, {{subheadlinedifoltnifontHmobilni.fallback_families}} !important; 
+        {% endif %} 
+      {% endif %}
+
+     padding: {{subheadlinepaddingtopmobilni}}px {{subheadlinepaddingrightmobilni}}px {{subheadlinepaddingbottommobilni}}px {{subheadlinepaddingleftmobilni}}px;
+      text-align:{{subheadlinepozicioniranjeHelementamobilni}};
+        
+      {% if subheadlinedebljinafontaHmobilni != "default" %}
+        font-weight: {{subheadlinedebljinafontaHmobilni}} !important;
+      {%endif%} 
+        
+      {% if subheadlinebojaHtekstamobilni contains '#' %} 
+        color:{{ subheadlinebojaHtekstamobilni }};
+      {%endif%} 
+         {% if subheadlinevelicinafontaracunarHmobilni!= 0 %} 
+    font-size: {{ subheadlinevelicinafontaracunarHmobilni }}px;
+  {% endif %} 
+  
+    {% if subheadlinerazmakizmedjuslovaracunarHmobilni!= 0 %}
+      line-height:{{ subheadlinerazmakizmedjuslovaracunarHmobilni }};
+    {% endif %} 
+      {% if subheadlinerazmakizmedjureciracunarHmobilni!= 0 %}
+        letter-spacing:{{ subheadlinerazmakizmedjureciracunarHmobilni }}px;
+      {% endif %} 
+    
+    }
+     #{{ sectionID }} .UX-custom-paragraph {
+      {% if kastomPfontaMobilni %} 
+ {% if imefontaPelementaMobilni != blank %} 
+   font-family:{{ imefontaPelementaMobilni }}; 
+   {% else %} font-family:{{ preduslovzaPelementMobilni.family}}, {{ preduslovzaPelementMobilni.fallback_families }}; 
+  {% endif %} 
+{%endif%} 
+  
+{% if debljinafontaPelementaMobilni != "default" %}
+  font-weight: {{debljinafontaPelementaMobilni}} !important;
+{%endif%} 
+   text-align: {{ pozicioniranjePelementaMobilni }};
+{% if bojatekstaPelementaMobilni contains '#' %} 
+  color:{{ bojatekstaPelementaMobilni }};
+{%endif%} 
+} 
+
+#{{ sectionID }} .UX-custom-paragraph{ 
+{% if velicinafontaPelementaMobilni!= 0 %} 
+  font-size: {{ velicinafontaPelementaMobilni }}px;
+{% endif %} 
+
+  {% if razmakizmedjulinijaPfontMobilni != 0 %}
+    line-height:{{ razmakizmedjulinijaPfontMobilni }};
+  {% endif %} 
+    {% if razmakizmedjuslovaPelementMobilni!= 0 %}
+      letter-spacing:{{ razmakizmedjuslovaPelementMobilni }}px;
+    {% endif %} 
+}
+     #{{ sectionID }}  .UX-custom-paragraph {
+   padding: {{paragraphTopPadingMobilni}}px {{paragraphRightPadingMobilni}}px {{paragraphBottomPadingMobilni}}px {{paragraphLeftPadingMobilni}}px; 
+}
+     #{{ sectionID }} .UX-custom-heading .centeralign{
+      text-align: {{dugmepozicioniranjeMobilni }}; 
+     } 
+#{{ sectionID }} .UX-page-width- .centeralign {
+padding-left:{{ levipadingzadugmemobilni }};
+padding-right:{{ desnipadingzadugmemobilni }};
+}  
+    #{{ sectionID }} .UX-custom-heading .ux-btn {
+      margin-top: {{dugmeMarginaGornjaMobilni}}px !important;
+      margin-bottom: {{dugmeMarginaDonjaMobilni}}px !important;
+      margin-left: {{dugmeMarginaLevaMobilni}}px !important;
+      margin-right: {{dugmeMarginaDesnaMobilni}}px !important; 
+      font-size: {{DugmeVelicinaFontaMobilni}}px;
+      letter-spacing: {{dugmeRazmakIzmedjuSlovaMobilni}}px;
+      padding: {{ dugmePadingVertikalniMobilni }}px {{ dugmePadingHorizontalniMobilni }}px;
+
+{% if kastomFontDugmeMobilni %} 
+  
+  {% if imeFontaDugmeMobilni != blank %} 
+    font-family:{{ imeFontaDugmeMobilni }}; 
+    {% else %} 
+    font-family:{{ fontDugmeMobilni.family }}, {{ fontDugmeMobilni.fallback_families }}; 
+   {% endif %} 
+{%endif%} 
+
+     
+      
+
+{% if debljinaFontaDugmeMobilni != "default" %} 
+  font-weight:{{ debljinaFontaDugmeMobilni }} !important;
+{%endif%} 
+  background: {{ dugmeBojaPozadineMobilni }};
+  color:{{ dugmeBojatekstaMobilni }};
+  
+   {% if dugmeBorderMobilni != 0 %} 
+     border: {{ dugmeBorderMobilni }}px solid {{ dugmeBorderBojaMobilni }}; 
+      border-radius: {{dugmeBorderRadiusMobilni}}px;
+   {% endif %} 
+  
+}
+      
+     #{{ sectionID }} .UX-page-width- .centeralign .ux-btn:hover {
+color:{{ dugmeBojatekstaHoverMobilni }}; background-color:{{ dugmeBojaPozadineHoverMobilni }};
+  
+     {% if dugmeBorderMobilni != 0 %}
+        border-color:{{ dugmeBorderBojaHoverMobilni }};
+     {% endif %} 
+}
+    
+    
+      
+
+
+   }
+    
+   .UX-page-width-regular {
+    max-width: 80%;
+    margin: 0 auto;
+}
+    .UX-page-width-fullwidth {
+    max-width: 100%;
+    margin: 0 auto;
+}
+   .centeralign .ux-btn{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin:0 auto !important;
+    text-align: center;
+}
+    .centeralign{
+    text-align:center;  
+    }
+
+  
+ 
+
+
+
+
+     
+    </style>
+ {% schema %}
+{
+	"name": "EmbedUX-CustomHTML",
+	"tag": "section",
+	"class": "spaced-section",
+  "settings": [ 
+       {
+            "type": "header",
+            "content": "IMPORTANT INFORMATION",
+            "info": "All possible customizations for an element are marked with the same number (e.g. [1]). Making it easier to identify the options that are relevant to the same element." 
+        },
+      {
+            "type": "header",
+            "content": "SECTION STYLE - [1]"
+        },
+      {
+        "type": "radio",
+        "id": "pickBackground",
+        "label": "Background Color or Picture: - [1]",
+        "options": [
+          {"value": "color","label":"Color"},
+          {"value": "picture","label":"Picture"}
+        ]
+      },
+      {
+       "type": "image_picker",
+        "id": "urlSlike",
+        "label": "Image"
+      },
+     {
+        "type": "color",
+        "id": "section_background_color",
+        "label": "Section Background Color - [1]",
+        "default": "#4770DB"
+     },
+    
+    
+    
+    {
+        "type": "range",
+        "id": "content_max_width",
+        "min": 10,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Section Container - [1]",
+        "default": 60
+    },	
+    
+    
+    {
+        "type": "range",
+        "id": "section_margin_top",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Top Margin - [1]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_margin_bottom",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Bottom Margin - [1]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_padding_top",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Top Padding - [1]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_padding_horizontal",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Horizontal Padding - [1]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Bottom Padding - [1]",
+        "default": 0
+    },	
+
+    {
+            "type": "header",
+            "content": "Inner Section Style - [2]"
+        },
+    {
+        "type": "color",
+        "id": "section_inner_color",
+        "label": "Section Inner Background Color - [2]",
+        "default": "#4770DB"
+     },
+    {
+        "type": "range",
+        "id": "content_max_width_inner",
+        "min": 10,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Section Inner Container - [2]",
+        "default": 100
+    },	
+    
+    
+    {
+        "type": "range",
+        "id": "section_margin_top_inner",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Top Margin - [2]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_margin_bottom_inner",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Bottom Margin - [2]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_padding_top_inner",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Top Padding - [2]",
+        "default": 0
+    },
+   
+    {
+        "type": "range",
+        "id": "section_padding_bottom_inner",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Bottom Padding - [2]",
+        "default": 0
+    },	
+      {
+            "type": "header",
+            "content": "HEADLINE STYLE - [3]"
+        },
+    {
+        "type": "text",
+        "id": "section_title",
+        "label": "Headline - [3]",
+        "default": "Please enter your text(optional)",
+        "info" : "Add '<br>' to move the text after it to the next line"
+    },
+    {
+        "type": "select",
+        "id": "section_title_type",
+        "options": [
+            {
+            "value": "h1",
+            "label": "H1"
+            },
+            {
+            "value": "h2",
+            "label": "H2"
+            },
+            {
+            "value": "h3",
+            "label": "H3"
+            },
+            {
+            "value": "h4",
+            "label": "H4"
+            },
+            {
+            "value": "h5",
+            "label": "H5"
+            },
+            {
+            "value": "h6",
+            "label": "H6"
+            }
+        ],
+        "default": "h2",
+        "label": "Heading Tags - [3]",
+        "info": "Use Heading Tags for better SEO"
+    },
+    {
+        "type": "color",
+        "id": "section_title_color",
+        "label": "Headline Color - [3]",
+        "default": "#f9f9f9"
+    },
+    {
+        "type": "select",
+        "id": "section_title_alignment",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Headline Alignment - [3]"
+    },
+    {
+        "type": "range",
+        "id": "headline_margin_top",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Headline Top Padding - [3]",
+        "default": 0
+    },
+       {
+        "type": "range",
+        "id": "headline_margin_bottom",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Headline Bottom Padding - [3]",
+        "default": 0
+    },
+    {
+        "type": "range",
+        "id": "headline_margin_left",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Headline Left Padding - [3]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "headline_margin_right",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Headline Right Padding - [3]",
+        "default": 20
+    },	
+ 
+    {
+        "type": "checkbox",
+        "id": "section_title_custom_font",
+        "label": "Use Custom Font - [3]",
+        "default": false
+    },
+    {
+        "type": "font_picker",
+        "id": "section_title_font",
+        "label": "Section Headline Font - [3]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "section_title_font_name",
+        "label": "Custom Font Family Name - [3]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    {
+        "type": "select",
+        "id": "section_title_font_weight",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Headline Font Weight - [3]",
+        "info":"Some fonts do not support all weight options."
+    },
+    {
+        "type": "range",
+        "id": "section_title_font_size",
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "unit": "px",
+        "label": "Headline Font Size - [3]",
+        "default": 32
+    },
+    {
+        "type": "range",
+        "id": "section_title_line_height",
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Headline Line Height - [3]",
+        "default": 1.5
+    },
+    {
+        "type": "range",
+        "id": "section_title_letter_spacing",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Headline Letter Spacing - [3]",
+        "default": 0
+    },
+    {
+        "type": "paragraph",
+        "content": "Set value to 0 to use your theme's default values."
+    },	
+      {
+            "type": "header",
+            "content": "SUBHEADLINE STYLE - [4]"
+        },
+    {
+        "type": "text",
+        "id": "subheadline_title",
+        "label": "Subheadline - [4]",
+        "default": "Please enter your text(optional)"
+    },
+    {
+        "type": "select",
+        "id": "subheadline_type",
+        "options": [
+            {
+            "value": "h1",
+            "label": "H1"
+            },
+            {
+            "value": "h2",
+            "label": "H2"
+            },
+            {
+            "value": "h3",
+            "label": "H3"
+            },
+            {
+            "value": "h4",
+            "label": "H4"
+            },
+            {
+            "value": "h5",
+            "label": "H5"
+            },
+            {
+            "value": "h6",
+            "label": "H6"
+            }
+        ],
+        "default": "h3",
+        "label": "Subheadline Heading Tag - [4]",
+        "info": "Use Heading Tags for better SEO"
+    },
+    {
+        "type": "color",
+        "id": "subheadline_color",
+        "label": "Subheadline Color - [4]",
+        "default": "#F9F9F9"
+    },
+    {
+        "type": "select",
+        "id": "subheadline_alignment",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Subheadline Alignment - [4]"
+    },
+    {
+        "type": "range",
+        "id": "subheadline_margin_top",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Subheadline Top Padding - [4]",
+        "default": 10
+    },
+    {
+        "type": "range",
+        "id": "subheadline_margin_bottom",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Subheadline Bottom Padding - [4]",
+        "default": 0
+    },
+    {
+        "type": "range",
+        "id": "subheadline_margin_left",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Subheadline Left Padding - [4]",
+        "default": 100
+    },	
+    {
+        "type": "range",
+        "id": "subheadline_margin_right",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Subheadline Right Padding - [4]",
+        "default": 100
+    },	
+    
+    {
+        "type": "checkbox",
+        "id": "subheadline_custom_font",
+        "label": "Use Custom Font - [4]",
+        "default": true
+    },
+    {
+        "type": "font_picker",
+        "id": "subheadline_font",
+        "label": "Subheadline Font - [4]",
+        "default": "sans-serif"
+    },
+    {
+        "type": "text",
+        "id": "subheadline_font_name",
+        "label": "Custom Font Family Name - [4]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    {
+        "type": "select",
+        "id": "subheadline_font_weight",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Subheadline Font Weight - [4]",
+        "info":"Some fonts do not support all weight options."
+    },
+    {
+        "type": "range",
+        "id": "subheadline_font_size",
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "unit": "px",
+        "label": "Subheadline Font Size - [4]",
+        "default": 22
+    },
+    {
+        "type": "range",
+        "id": "subheadline_line_height",
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Subheadline Line Height - [4]",
+        "default": 1.5
+    },
+    {
+        "type": "range",
+        "id": "subheadline_letter_spacing",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Subheadline Letter Spacing - [4]",
+        "default": 0
+    },
+    {
+        "type": "paragraph",
+        "content": "Set value to 0 to use your theme's default values."
+    },
+    {
+        "type": "header",
+        "content": "PARAGRAPH STYLING - [5]"
+    },
+    {
+        "type": "richtext",
+        "id": "section_textblock",
+        "label": "Paragraph Text - [5]"
+    },
+    {
+        "type": "color",
+        "id": "section_textblock_color",
+        "label": "Paragraph Text Color - [5]"
+    },
+    {
+        "type": "select",
+        "id": "section_paragraph_alignment",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Paragraph Alignment - [5]"
+    },
+    {
+        "type": "range",
+        "id": "paragraph_margin_top",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Paragraph Top Padding - [5]",
+        "default": 20
+    },
+     {
+        "type": "range",
+        "id": "paragraph_margin_bottom",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Paragraph Bottom Padding - [5]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "paragraph_margin_left",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Paragraph Left Padding - [5]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "paragraph_margin_right",
+        "min": 0,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "label": "Paragraph Right Padding - [5]",
+        "default": 20
+    },	
+
+    {
+        "type": "checkbox",
+        "id": "section_textblock_custom_font",
+        "label": "Use Custom Font - [5]",
+        "default": false
+    },
+    {
+        "type": "font_picker",
+        "id": "section_textblock_font",
+        "label": "Paragraph Text Font - [5]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "section_textblock_font_name",
+        "label": "Custom Font Family Name - [5]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    
+    {
+        "type": "select",
+        "id": "section_textblock_font_weight",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Paragraph Font Weight - [5]",
+        "info": "Some fonts do not support all weight options."
+      
+    },
+    {
+        "type": "range",
+        "id": "section_textblock_font_size",
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "unit": "px",
+        "label": "Paragraph Font Size - [5]",
+        "default": 16
+    },
+    {
+        "type": "range",
+        "id": "section_textblock_line_height",
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Paragraph Line Height - [5]",
+        "default": 1
+    },
+    {
+        "type": "range",
+        "id": "section_textblock_letter_spacing",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Paragraph Letter Spacing - [5]",
+        "default": 0
+    },
+
+    {
+        "type": "paragraph",
+        "content": "Set value to 0 to use your theme's default values."
+    },
+    {
+    "type": "header",
+    "content": "BUTTON STYLING - [6]"
+    },
+    {
+            "type": "color",
+            "id": "slide_button_text_color",
+            "label": "Button Text Color - [6]",
+            "default": "#333333"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_background_color",
+            "label": "Button Background Color - [6]"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_border_color",
+            "label": "Button Border Color - [6]",
+             "default": "#333333"
+        },
+    {
+            "type": "color",
+            "id": "slide_button_text_color_hover",
+            "label": "Button Hover Text Color - [6]",
+            "default": "#ffffff"
+        },
+ {
+            "type": "color",
+            "id": "slide_button_background_color_hover",
+            "label": "Button Hover Background Color - [6]",
+            "default": "#333333"
+        },
+        
+        {
+            "type": "color",
+            "id": "slide_button_border_color_hover",
+            "label": "Button Hover Border Color - [6]"
+        },
+    {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label - [6]",
+        "default": "Learn More"
+     },
+    {
+     "type": "url",
+      "id": "button_url",
+      "label": "Button Link - [6]"
+    },
+    {
+        "type": "checkbox",
+        "id": "open_blank",
+        "label": "Open link in new tab - [6]",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "button_custom_font",
+        "label": "Use Custom Font - [6]",
+        "default": false
+    },
+    {
+        "type": "font_picker",
+        "id": "button_font",
+        "label": "Button Font - [6]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "button_font_name",
+        "label": "Custom Font Family Name - [6]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    {
+        "type": "select",
+        "id": "button_font_weight",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Button Font Weight - [6]",
+        "info":"Some fonts do not support all weight options."
+    },
+    {
+            "type": "range",
+            "id": "slide_button_font_size",
+            "min": 0,
+            "max": 64,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Font Size - [6]",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "slide_button_letter_spacing",
+            "min": 0,
+            "max": 4,
+            "step": 0.5,
+            "unit": "px",
+            "label": "Button Letter Spacing - [6]",
+            "default": 1.5
+        },
+        
+        {
+            "type": "range",
+            "id": "slide_button_padding_horizontal",
+            "min": 0,
+            "max": 300,
+            "step": 10,
+            "unit": "px",
+            "label": "Button Horizontal Padding - [6]",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "slide_button_padding_vertical",
+            "min": 0,
+            "max": 300,
+            "step": 10,
+            "unit": "px",
+            "label": "Button Vertical Padding - [6]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_border",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Border Width - [6]",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "slide_button_radius",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Border Radius - [6]",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Padding Top - [6]",
+            "default": 10
+        },
+    {
+            "type": "range",
+            "id": "slide_button_margin_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Padding Bottom - [6]",
+            "default": 10
+        },
+    {
+            "type": "range",
+            "id": "button_left_margin",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Margin Left - [6]",
+            "default": 10
+        },
+    {
+            "type": "range",
+            "id": "button_right_margin",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Margin Right - [6]",
+            "default": 10
+        },
+    
+    {
+        "type": "select",
+        "id": "button_alignment",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Button Alignment - [6]"
+    },
+    {
+    "type": "header",
+    "content": "HTML SECTION - [7]"
+    },
+    
+    {
+      "type": "html",
+      "id": "html",
+      "label": "HTML content - [7]"
+    },
+    {
+    "type": "header",
+    "content": "MOBILE SECTION STYLE - [8]"
+    },
+    {
+        "type": "color",
+        "id": "section_background_color_mobile",
+        "label": "Mobile Section Container Color - [8]"
+    },
+    {
+        "type": "color",
+        "id": "section_inner_color_mobile",
+        "label": "Mobile Section Inner Background Color - [8]"
+     },
+    {
+        "type": "range",
+        "id": "content_max_width_mobile",
+        "min": 20,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "Mobile Section Container - [8]",
+        "default": 100
+    },
+   
+    {
+        "type": "range",
+        "id": "section_margin_top_mobile",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Section Container Top Margin - [8]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_margin_bottom_mobile",
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Section Container Bottom Margin - [8]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "section_padding_top_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Section Container Top Padding - [8]",
+        "default": 20
+    },
+    	
+    {
+        "type": "range",
+        "id": "section_padding_bottom_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Section Container Bottom Padding - [8]",
+        "default": 20
+    },	
+       
+    
+    {
+    "type": "header",
+    "content": "MOBILE HEADLINE STYLING - [9]"
+    },
+    {
+        "type": "color",
+        "id": "section_title_color_mobile",
+        "label": "Mobile Headline Color - [9]"
+    },
+    {
+        "type": "select",
+        "id": "section_title_alignment_mobile",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Mobile Headline Alignment - [9]"
+    },
+    {
+        "type": "checkbox",
+        "id": "section_title_custom_font_mobile",
+        "label": "Use Custom Mobile Font - [9]",
+        "default": false
+    },
+    {
+        "type": "font_picker",
+        "id": "section_title_font_mobile",
+        "label": "Mobile Headline Font - [9]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "section_title_font_name_mobile",
+        "label": "Mobile Custom Font Family Name - [9]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    {
+        "type": "select",
+        "id": "section_title_font_weight_mobile",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Mobile Headline Font Weight - [9]",
+        "info":"Some fonts do not support all weight options."
+    },
+    {
+        "type": "range",
+        "id": "section_title_font_size_mobile",
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Headline Font Size - [9]",
+        "default": 32
+    },
+    {
+        "type": "range",
+        "id": "section_title_line_height_mobile",
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Mobile Headline Line Height - [9]",
+        "default": 1.5
+    },
+    {
+        "type": "range",
+        "id": "section_title_letter_spacing_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Headline Letter Spacing - [9]",
+        "info": "Set value to 0 to use your theme's default values.",
+        "default": 0
+    },
+    {
+        "type": "range",
+        "id": "headline_padding_top_mobile_inner",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Headline Top Padding - [9]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "headline_padding_left_mobile_inner",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Headline Left Padding - [9]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "headline_padding_right_mobile_inner",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Headline Right Padding - [9]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "headline_padding_bottom_mobile_inner",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Headline Bottom Padding - [9]",
+        "default": 20
+    },
+    	
+      {
+            "type": "header",
+            "content": "MOBILE SUBHEADLINE STYLE - [10]"
+        },
+    {
+        "type": "color",
+        "id": "subheadline_color_mobile",
+        "label": "Mobile Subheadline Color - [10]"
+    },
+    {
+        "type": "select",
+        "id": "subheadline_alignment_mobile",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Mobile Subheadline Alignment - [10]"
+    },
+    {
+        "type": "range",
+        "id": "subheadline_padding_top_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Subheadline Top Padding  - [10]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "subheadline_padding_left_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Subheadline Left Padding  - [10]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "subheadline_padding_right_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Subheadline Right Padding  - [10]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "subheadline_padding_bottom_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Subheadline Bottom Padding  - [10]",
+        "default": 20
+    },
+    {
+        "type": "checkbox",
+        "id": "subheadline_custom_font_mobile",
+        "label": "Use Custom Mobile Font - [10]",
+        "default": true
+    },
+    {
+        "type": "font_picker",
+        "id": "subheadline_font_mobile",
+        "label": "Mobile Subheadline Font - [10]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "subheadline_font_name_mobile",
+        "label": "Mobile Custom Font Family Name - [10]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    {
+        "type": "select",
+        "id": "subheadline_font_weight_mobile",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Mobile Subheadline Font Weight - [10]",
+        "info":"Some fonts do not support all weight options."
+    },
+    {
+        "type": "range",
+        "id": "subheadline_font_size_mobile",
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Subheadline Font Size - [10]",
+        "default": 32
+    },
+    {
+        "type": "range",
+        "id": "subheadline_line_height_mobile",
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Mobile Subheadline Line Height - [10]",
+        "default": 1.5
+    },
+    {
+        "type": "range",
+        "id": "subheadline_letter_spacing_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Subheadline Letter Spacing - [10]",
+        "default": 0
+    },
+    {
+        "type": "paragraph",
+        "content": "Set value to 0 to use your theme's default values."
+    },
+    {
+        "type": "header",
+        "content": "MOBILE PARAGRAPH STYLING - [11]"
+    },
+    {
+        "type": "color",
+        "id": "section_textblock_color_mobile",
+        "label": "Mobile Paragraph Text Color  - [11]"
+    },
+    {
+        "type": "select",
+        "id": "section_paragraph_alignment_mobile",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Mobile Paragraph Alignment - [11]"
+    },
+    {
+        "type": "range",
+        "id": "paragraph_padding_top_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Paragraph Top Padding - [11]",
+        "default": 20
+    },
+    {
+        "type": "range",
+        "id": "paragraph_padding_left_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Paragraph Left Padding - [11]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "paragraph_padding_right_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Paragraph Right Padding - [11]",
+        "default": 20
+    },	
+    {
+        "type": "range",
+        "id": "paragraph_padding_bottom_mobile",
+        "min": 0,
+        "max": 300,
+        "step": 10,
+        "unit": "px",
+        "label": "Mobile Paragraph Bottom Padding - [11]",
+        "default": 20
+    },    
+
+
+    {
+        "type": "checkbox",
+        "id": "section_textblock_custom_font_mobile",
+        "label": "Mobile Use Custom Font - [11]",
+        "default": false
+    },
+    {
+        "type": "font_picker",
+        "id": "section_textblock_font_mobile",
+        "label": "Mobile Paragraph Text Font - [11]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "section_textblock_font_name_mobile",
+        "label": "Mobile Custom Font Family Name - [11]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    },
+    {
+        "type": "select",
+        "id": "section_textblock_font_weight_mobile",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Mobile Paragraph Font Weight - [11]",
+        "info": "Some fonts do not support all weight options."
+      
+    },
+    {
+        "type": "range",
+        "id": "section_textblock_font_size_mobile",
+        "min": 0,
+        "max": 64,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Paragraph Font Size - [11]",
+        "default": 16
+    },
+    {
+        "type": "range",
+        "id": "section_textblock_line_height_mobile",
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Mobile Paragraph Line Height - [11]",
+        "default": 1.5
+    },
+    {
+        "type": "range",
+        "id": "section_textblock_letter_spacing_mobile",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile Paragraph Letter Spacing - [11]",
+        "default": 0
+    },
+    
+    {
+        "type": "paragraph",
+        "content": "Set value to 0 to use your theme's default values."
+    },
+    {
+    "type": "header",
+    "content": "MOBILE BUTTON STYLING - [12]"
+    },
+    {
+            "type": "color",
+            "id": "slide_button_text_color_mobile",
+            "label": "Mobile Button Text Color - [12]",
+            "default": "#333333"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_background_color_mobile",
+            "label": "Mobile Button Background Color - [12]"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_border_color_mobile",
+            "label": "Mobile Button Border Color - [12]",
+             "default": "#333333"
+        },
+    {
+            "type": "color",
+            "id": "slide_button_text_color_hover_mobile",
+            "label": "Mobile Button Hover Text Color - [12]",
+            "default": "#ffffff"
+        },
+       {
+            "type": "color",
+            "id": "slide_button_background_color_hover_mobile",
+            "label": "Mobile Button Hover Background Color - [12]",
+            "default": "#333333"
+        },
+        
+        {
+            "type": "color",
+            "id": "slide_button_border_color_hover_mobile",
+            "label": "Mobile Button Hover Border Color - [12]"
+        },
+    {
+            "type": "range",
+            "id": "slide_button_font_size_mobile",
+            "min": 0,
+            "max": 64,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Button Font Size - [12]",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "slide_button_letter_spacing_mobile",
+            "min": 0,
+            "max": 4,
+            "step": 0.5,
+            "unit": "px",
+            "label": "Mobile Button Letter Spacing - [12]",
+            "default": 1.5
+        },
+           
+        
+        {
+            "type": "range",
+            "id": "slide_button_padding_horizontal_mobile",
+            "min": 0,
+            "max": 300,
+            "step": 10,
+            "unit": "px",
+            "label": "Mobile Button Horizontal Padding - [12]",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "slide_button_padding_vertical_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Vertical Padding - [12]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_border_mobile",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Button Border Width - [12]",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "slide_button_radius_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Button Border Radius - [12]",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_top_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin Top - [12]",
+            "default": 10
+        },
+    
+        {
+            "type": "range",
+            "id": "slide_button_margin_bottom_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin Bottom - [12]",
+            "default": 10
+        },
+    {
+            "type": "range",
+            "id": "slide_button_margin_left_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin left - [12]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_right_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin right - [12]",
+            "default": 10
+        },
+    {
+        "type": "select",
+        "id": "button_alignment_mobile",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "center",
+        "label": "Mobile Button Alignment - [12]"
+    },
+    {
+        "type": "select",
+        "id": "slide_button_font_weight_mobile",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Mobile Button Font Weight - [12]",
+        "info": "Some fonts do not support all weight options."
+      
+    }
+    
+    
+       
+	],
+	"presets": [
+		{ "name": "EmbedUX-CustomHTML" }
+	]
+}
+{% endschema %}

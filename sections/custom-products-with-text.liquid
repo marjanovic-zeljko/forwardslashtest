@@ -1,0 +1,306 @@
+{%- assign section-padding-top = section.settings.section_padding_top -%}
+{%- assign section-padding-bottom = section.settings.section_padding_bottom -%}
+{%  assign sectionID = 'shopify-section-' | append: section.id %}
+{%  assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', '' %}
+
+
+
+  <div class="l-wrapper" style="padding-top: {{section-padding-top}}px; padding-bottom:{{section-padding-bottom}}px;" id="{{divID}}">
+    {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+      {%- assign block-title = block.settings.block_title -%}
+      {%- assign heading-type = block.settings.heading_type -%}
+      {%- assign text-type = block.settings.text_type -%}
+      {%- assign text-color = block.settings.text_type_color -%}
+     {% assign header_font_new = block.settings.header_font_new %}
+     {% assign base_font_new = block.settings.base_font_new %}
+
+{%- assign base_font_bold = block.settings.base_font_new | font_modify: 'weight', 'bolder' -%}
+{%- assign base_font_italic = block.settings.base_font_new | font_modify: 'style', 'italic' -%}
+{%- assign base_font_bold_italic = block.settings.base_font_new | font_modify: 'weight', 'bolder' | font_modify: 'style', 'italic' -%}
+
+{{ base_font_bold | font_face }}
+{{ base_font_italic | font_face }}
+{{ base_font_bold_italic | font_face }}
+
+      <div class="heading-container">
+        {% if block-title != 'blank' %}
+          <{{ heading-type }}>{{ block-title }}</{{ heading-type }}>
+        {% endif %}
+      </div>
+      {% if text-type != blank %}
+        <div class="test-text" style="color: {{text-color}}">
+          <span>{{ text-type }}</span>
+        </div>
+        <style> #{{ sectionID }} .test-text span p  {
+    font-family: {{ header_font_new.family }}, {{ header_font_new.fallback_families }};
+   font-weight: {{ header_font_new.weight }};
+   font-style:{{ header_font_new.style }};
+  
+  }</style>
+      {% endif %}
+    {% endfor %}
+
+
+
+    {% for block in section.blocks %}
+      {% if block.type == 'product' and block.settings.heading_font_size > 1 %}
+        {% if product.metafields.product_info.related_products %}
+          {% assign relatedProducts = product.metafields.product_info.related_products.value %}
+          {%- assign has1product = false -%}
+
+          {% for prod in relatedProducts %}
+            {% if prod.available == true %}
+              {%- assign has1product = true -%}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+
+          {% if has1product %}
+            <div class="related-products" id="related-products-{{ block.id }}">
+              {%- assign products_to_show = block.settings.products_to_show | default: 4 -%}
+              {% assign displayed_products = 0 %}
+
+              {% for prod in relatedProducts %}
+                {% if prod.available == true and displayed_products < products_to_show %}
+                  <a
+                    href="{{ prod.url }}"
+                    class="related-product"
+                    aria-label="{{ prod.title }}"
+                    title="{{ prod.title }}">
+                    <img
+                      class="related-product__image"
+                      src="{{ prod.images[0] | img_url: '200x' }}"
+                      alt="{{ prod.title }}">
+                    <p class="product-title">{{ prod.title }}</p>
+                    <p class="price-text" style="font-size: {{ block.settings.heading_font_size }}px;">{{ prod.price | money_with_currency }}</p>
+                    {%- render 'buy-buttons' 
+                      , block: block,
+                      product: prod,
+                      product_form_id: product_form_id,
+                      section_id: section.id -%}
+                  </a>
+                  {% assign displayed_products = displayed_products | plus: 1 %}
+                {% else %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+            </div>
+
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+
+<style>
+  #{{ sectionID }} {
+    align-items: center;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+  }
+
+ 
+
+
+ #{{ sectionID }} a {
+    text-decoration: none;
+  }
+
+ #{{ sectionID }} .related-product {
+    display: flex;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+
+  }
+
+#{{ sectionID }}  .related-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+ #{{ sectionID }} .related-products .product-form__submit.button.button--full-width.button--primary {
+    color: black;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 20px;
+  }
+
+ #{{ sectionID }} .price-text {
+    color: orange;
+    font-weight: 600;
+  }
+
+#{{ sectionID }}  .product-title {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    line-height: normal;
+  }
+#{{ sectionID }}  #related-products-{{ block.id }}{
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+  }
+#{{ sectionID }}  #related-products-{{ block.id }}.related-product {
+    display: inline-block;
+    width: calc(25% - 0.4rem);
+    margin: 0 0.4rem 0.8rem 0;
+    position: relative;
+    border: 1px solid transparent;
+    text-align: center;
+  }
+ #{{ sectionID }} #related-products-{{ block.id }}.related-product:last-child {
+    margin-right: 0;
+  }
+#{{ sectionID }}  #related-products-{{ block.id }}.related-product__image {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+ #{{ sectionID }} .related-product:hover {
+    box-shadow: -2px 10px 11px -7px rgba(0, 0, 0, 0.87);
+    border-radius: 5px;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Custom Product With Text",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Bottom Padding",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "section_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Top Padding",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "heading",
+        "name": "Headings",
+        "settings": [
+          {
+            "type": "header",
+            "content": "HEADLINE STYLING"
+          },
+          {
+            "type": "text",
+            "id": "block_title",
+            "label": "Headline",
+            "default": "Please enter your text(optional)"
+          },
+          {
+            "type": "select",
+            "id": "heading_type",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              }, {
+                "value": "h5",
+                "label": "H5"
+              }, {
+                "value": "h6",
+                "label": "H6"
+              }
+            ],
+            "default": "h2",
+            "label": "Heading Tags",
+            "info": "Use Heading Tags for better SEO."
+          },
+          {
+            "type": "header",
+            "content": "PARAGRAPH STYLING - [2]"
+          }, {
+            "type": "richtext",
+            "id": "text_type",
+            "label": "Paragraph Text - [2]"
+          }, {
+            "type": "color",
+            "id": "text_type_color",
+            "label": "Paragraph Text Color - [2]"
+          }, 
+{
+  "type": "font_picker",
+  "id": "header_font_new",
+  "label": "Header Font",
+  "default": "work_sans_n6"
+}
+
+        ]
+      }, {
+        "type": "product",
+        "name": "⚡️ Related Product",
+        "settings": [
+          {
+            "type": "range",
+            "id": "products_to_show",
+            "min": 2,
+            "max": 25,
+            "step": 1,
+            "default": 4,
+            "label": "Product"
+          }, {
+            "type": "number",
+            "id": "heading_font_size",
+            "label": "Price Font Size (px)",
+            "default": 18
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Product With Text"
+      }
+    ]
+  }
+{% endschema %}
+<script>
+  let textToHidden = document.getElementsByClassName('heading-container');
+  for (let i = 0; i < textToHidden.length; i++) {
+    let innerText = textToHidden[i].innerText;
+    if (innerText === '<>') {
+      textToHidden[i].style.display = 'none';
+    }
+  }
+</script>

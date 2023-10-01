@@ -1,0 +1,285 @@
+{%- assign section_padding_top = section.settings.section_padding_top -%}
+{%- assign section_padding_bottom = section.settings.section_padding_bottom -%}
+{%  assign sectionID = 'shopify-section-' | append: section.id %}
+{%  assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', '' %}
+
+
+
+  <div class="l-wrapperr" style="padding-top: {{ section_padding_top }}px; padding-bottom:{{ section_padding_bottom }}px;" id="{{divID}}">
+    {% if section.blocks.size > 0 %}
+    <div class="media-container">
+      {% for block in section.blocks %}
+        {% assign image_picker = block.settings.image_picker_setting %}
+        {% assign video_picker = block.settings.video_picker_setting %}
+
+        {% if image_picker != blank %}
+          <img src="{{ image_picker | img_url: '600x600' }}" alt="Selected Image">
+        {% endif %}
+
+        {%- if video_picker.type == "youtube" -%}
+          <iframe
+            width="500px"
+            height="300px"
+            src="//www.youtube.com/embed/{{ video_picker.id }}?rel=0&showinfo=0&vq=720"
+            frameborder="0"
+            allowfullscreen></iframe>
+        {%- endif -%}
+        {%- if video_picker.type == "vimeo" -%}
+          <iframe
+            width="500px"
+            height="300px"
+            src="//player.vimeo.com/video/{{ video_picker.id }}?color={{ settings.color_button | remove: "#" }}&byline=0&portrait=0&badge=0"
+            frameborder="0"
+            allowfullscreen></iframe>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+
+    <div class="text-container">
+    {% for block in section.blocks %}
+      {%- assign block-title = block.settings.heading_title -%}
+      {%- assign heading-type = block.settings.heading_type -%}
+      {%- assign block_text_type = block.settings.text_type_rich_text -%}
+      {%- assign block_text_color = block.settings.text_type_color_rich_text -%}
+      {% assign header_font = block.settings.header_font_new %}
+      {% assign base_font = block.settings.base_font_new %}
+
+     
+
+{%- assign base_font_bold = block.settings.base_font | font_modify: 'weight', 'bolder' -%}
+{%- assign base_font_italic = block.settings.base_font | font_modify: 'style', 'italic' -%}
+{%- assign base_font_bold_italic = block.settings.base_font_bold | font_modify: 'style', 'italic' -%}
+
+
+{{ base_font_italic | font_face }}
+{{ base_font_bold_italic | font_face }}
+      
+      <div class="heading-container">
+        {% if block-title != 'blank' %}
+          <{{heading-type}}>
+            {{ block-title }}
+          </{{heading-type}}>
+        {% endif %}
+      </div>
+
+
+      {% if block_text_type != blank %}
+        
+        <div class="test-text-second" style="color:{{ block_text_color }};">
+         <span>{{ block_text_type }}</span>
+        </div>
+
+      {% endif %}
+     
+    {% endfor %}
+    </div> 
+
+  {% endif %}
+</div>
+<style>
+ 
+  * {
+    padding: 0;
+    margin: 0;
+  }
+.text-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .text-container #test-text-second p {
+    font-size:18px;
+    letter-spacing:normal;
+    line-height:normal;
+     color:unset;
+    font-weight:unset;
+  }
+
+   
+      
+.text-container .test-text-second span p  {
+    font-family: {{ header_font.family}}, {{ header_font.fallback_families }};
+   font-weight: {{ header_font.weight }};
+   font-style:{{ header_font.style }};
+  font-size:{{block.settings.header_base_size}};
+  }
+
+
+ #{{ sectionID }} {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+ #{{ sectionID }} a {
+    text-decoration: none;
+  }
+
+#{{ sectionID }}  .media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#{{ sectionID }}  .media-container + .heading-container {
+    display: none;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Custom Media With Text",
+    "tag": "section",
+    "class": "sec",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      }, {
+        "type": "range",
+        "id": "section_padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Bottom Padding",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "section_padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "Section Container Top Padding",
+        "default": 0
+      }
+    ],
+    "blocks": [
+      {
+        "type": "media",
+        "name": "Media",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_picker_setting",
+            "label": "Image Picker Setting",
+            "info": "Choose an image for this section."
+          }, {
+            "type": "video_url",
+            "id": "video_picker_setting",
+            "label": "Video Picker Setting",
+            "accept": [
+              "youtube", "vimeo"
+            ],
+            "info": "Choose a video for this section."
+          }
+        ]
+      }, {
+        "type": "text",
+        "name": "Headings",
+        "settings": [
+          {
+            "type": "header",
+            "content": "HEADLINE STYLING"
+          },
+          {
+            "type": "text",
+            "id": "heading_title",
+            "label": "Headline",
+            "default": "Please enter your text(optional)"
+          },
+          {
+            "type": "select",
+            "id": "heading_type",
+            "options": [
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              }, {
+                "value": "h5",
+                "label": "H5"
+              }, {
+                "value": "h6",
+                "label": "H6"
+              }
+            ],
+            "default": "h2",
+            "label": "Heading Tags",
+            "info": "Use Heading Tags for better SEO."
+          },
+          {
+            "type": "header",
+            "content": "PARAGRAPH STYLING - [2]"
+          }, {
+            "type": "richtext",
+            "id": "text_type_rich_text",
+            "label": "Paragraph Text - [2]"
+          }, {
+            "type": "color",
+            "id": "text_type_color_rich_text",
+            "label": "Paragraph Text Color - [2]"
+          }, 
+         
+   
+      {
+        "type": "font_picker",
+        "id": "header_font_new",
+        "label": "Font",
+        "default": "work_sans_n6"
+      },
+      {
+        "type": "range",
+        "id": "header_base_size",
+        "label": "Paragraph base size",
+        "default": 20,
+        "min": 15,
+        "max": 36,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "header",
+        "content": "Body text"
+      },
+      {
+        "type": "font_picker",
+        "id": "base_font_new",
+        "label": "Font",
+        "default": "work_sans_n4"
+      }
+      
+     
+        ]
+      }
+
+    ],
+    "presets": [
+      {
+        "name": "Custom Media With Text"
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+  let textToHidden = document.getElementsByClassName('heading-container');
+  for (let i = 0; i < textToHidden.length; i++) {
+    let innerText = textToHidden[i].innerText;
+    if (innerText === '<>') {
+      textToHidden[i].style.display = 'none';
+    }
+  }
+</script>

@@ -1,0 +1,3764 @@
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+{% liquid 
+   assign sectionID = 'shopify-section-' | append: section.id 
+   assign kolicinaKartica = section.settings.slidePerScreen
+   assign razmakIzmenjuKartica = section.settings.slideSpacing
+   assign autoPlej = section.settings.carouselAutoplay
+   assign sirinaSlike = section.settings.image_width 
+   assign sirinaKartice = section.settings.card_width
+   assign preduslovzaHelement = section.settings.section_title 
+   assign preduslovzaPelement = section.settings.section_textblock 
+  assign preduslovzaHelementSubheadline = section.settings.subheadline 
+    assign sirinaSekcije = section.settings.section_width 
+    assign punaSirinaKontenta = section.settings.content_fullwidth
+     assign divID = section.id | replace: 'template--', '' | replace: 'shopify-section-', '' | replace: '__', ''
+     assign maksSirinaKontenta = section.settings.content_max_width
+     assign maksSirinaUnutrasnjegKontenta = section.settings.inner_content_max_width
+     assign bojapozadinesekcije = section.settings.section_background_color
+      assign bojapozadineunutra = section.settings.background_color
+    assign podesavanjegornjemarginesekcijacela= section.settings.section_margin_top
+	assign podesavanjedonjemarginesekcijacela = section.settings.section_margin_bottom
+    assign podesavanjegornjegpadingacelasekcija = section.settings.section_padding_top
+    assign podesavanjedonjegpadingacelasekcija = section.settings.section_padding_bottom
+    assign horizontalnipadingcelasekcija = section.settings.section_padding_horizontal
+    assign orderVarijablaMobilni = section.settings.position_video_photo_mobile
+     assign velicinaHelementa = section.settings.section_title_type 
+     assign bojaHteksta = section.settings.section_title_color 
+     assign pozicioniranjeHelementa = section.settings.section_title_alignment 
+     assign kastomfontH = section.settings.section_title_custom_font 
+     assign difoltnifontH = section.settings.section_title_font
+     assign imefontaH = section.settings.section_title_font_name
+     assign debljinafontaH = section.settings.section_title_font_weight
+     assign velicinafontaracunarH = section.settings.section_title_font_size
+      assign razmakizmedjuslovaracunarH = section.settings.section_title_line_height
+     assign razmakizmedjureciracunarH = section.settings.section_title_letter_spacing
+     assign velicinaHelementaKartica = section.settings.cardsection_title_type 
+     assign bojaHtekstakartica = section.settings.cardsection_title_color 
+     assign pozicioniranjeHelementakartica = section.settings.cardsection_title_alignment 
+     assign kastomfontHkartica = section.settings.cardsection_title_custom_font 
+     assign difoltnifontHkartica = section.settings.cardsection_title_font
+     assign imefontaHkartica = section.settings.cardsection_title_font_name
+     assign debljinafontaHkartica = section.settings.cardsection_title_font_weight
+     assign velicinafontaracunarHkartica = section.settings.cardsection_title_font_size
+      assign razmakizmedjuslovaracunarHkartica = section.settings.cardsection_title_line_height
+     assign razmakizmedjureciracunarHkartica = section.settings.cardsection_title_letter_spacing
+     assign preduslovzaHelementPaddingGornjikartica = section.settings.cardsection_padding_top_heading 
+     assign preduslovzaHelementPaddingLevikartica = section.settings.cardsection_padding_left_heading
+     assign preduslovzaHelementPaddingDesnikartica = section.settings.cardsection_padding_right_heading
+     assign preduslovzaHelementPaddingDonjikartica = section.settings.cardsection_padding_bottom_heading
+   assign preduslovzaHelementPaddingGornji = section.settings.section_padding_top_heading 
+ assign preduslovzaHelementPaddingLevi = section.settings.section_padding_left_heading
+   assign preduslovzaHelementPaddingDesni = section.settings.section_padding_right_heading
+    assign preduslovzaHelementPaddingDonji = section.settings.section_padding_bottom_heading
+   assign pozicioniranjePelementa = section.settings.section_paragraph_alignment
+   assign bojatekstaPelementa = section.settings.section_textblock_color
+   assign kastomPfont = section.settings.section_textblock_custom_font
+    assign difoltnifontzaP = section.settings.section_textblock_font
+   assign imefontaPelementa = section.settings.section_textblock_font_name
+   assign debljinafontaPelementa = section.settings.section_textblock_font_weight
+   assign velicinafontaPelementa = section.settings.section_textblock_font_size
+   assign razmakizmedjulinijaPfont = section.settings.section_textblock_line_height
+   assign razmakizmedjuslovaPelement= section.settings.section_textblock_letter_spacing
+   assign preduslovzaPelementPadingGornji = section.settings.section_padding_top_paragraph 
+   assign preduslovzaPelementPadingLevi = section.settings.section_padding_left_paragraph
+   assign preduslovzaPelementPadingDesni = section.settings.section_padding_right_paragraph
+   assign preduslovzaPelementPadingDonji = section.settings.section_padding_bottom_paragraph
+   assign pozicioniranjePelementakartica = section.settings.cardsection_paragraph_alignment 
+   assign bojatekstaPelementakartica = section.settings.cardsection_textblock_color
+   assign kastomPfontkartica = section.settings.cardsection_textblock_custom_font
+    assign difoltnifontzaPkartica = section.settings.cardsection_textblock_font
+   assign imefontaPelementakartica = section.settings.cardsection_textblock_font_name
+   assign debljinafontaPelementakartica = section.settings.cardsection_textblock_font_weight
+   assign velicinafontaPelementakartica = section.settings.cardsection_textblock_font_size
+   assign razmakizmedjulinijaPfontkartica = section.settings.cardsection_textblock_line_height
+   assign razmakizmedjuslovaPelementkartica= section.settings.cardsection_textblock_letter_spacing
+   assign preduslovzaPelementPadingGornjikartica = section.settings.cardsection_padding_top_paragraph 
+   assign preduslovzaPelementPadingLevikartica = section.settings.cardsection_padding_left_paragraph
+   assign preduslovzaPelementPadingDesnikartica = section.settings.cardsection_padding_right_paragraph
+   assign preduslovzaPelementPadingDonjikartica = section.settings.cardsection_padding_bottom_paragraph
+  assign velicinaHelementaSubheadline = section.settings.subheadline_type
+  assign bojaHtekstaSubheadline = section.settings.subheadline_color
+  assign pozicioniranjeHelementaSubheadline = section.settings.subheadline_alignment
+  assign kastomfontHSubheadline = section.settings.subheadline_custom_font         
+  assign difoltnifontHSubheadline = section.settings.subheadline_font
+   assign imefontaHSubheadline = section.settings.subheadline_font_name
+  assign debljinafontaHSubheadline = section.settings.subheadline_font_weight
+  assign velicinafontaracunarHSubheadline = section.settings.subheadline_font_size
+  assign razmakizmedjuslovaracunarHSubheadline= section.settings.subheadline_line_height
+  assign razmakizmedjureciracunarHSubheadline= section.settings.subheadline_letter_spacing
+  assign preduslovzaHelementPaddingGornjiSubheadline = section.settings.section_padding_top_subheadline
+  assign preduslovzaHelementPaddingLeviSubheadline = section.settings.section_padding_left_subheadline
+  assign preduslovzaHelementPaddingDesniSubheadline = section.settings.section_padding_right_subheadline
+  assign preduslovzaHelementPaddingDonjiSubheadline = section.settings.section_padding_bottom_subheadline
+     assign kastomFontDugme = section.settings.slide_button_custom_font 
+     assign pozicioniranjeDugmeta = section.settings.section_button_alignment 
+     assign debljinaFontaDugme = section.settings.slide_button_font_weight 
+     assign DugmeVelicinaFonta = section.settings.slide_button_font_size 
+     assign dugmeRazmakIzmedjuSlova = section.settings.slide_button_letter_spacing 
+     assign dugmePadingHorizontalni = section.settings.slide_button_padding_horizontal 
+     assign dugmePadingVertikalni =  section.settings.slide_button_padding_vertical 
+     assign dugmeMarginaGornja = section.settings.slide_button_margin_top 
+     assign dugmeMarginaDonja = section.settings.slide_button_margin_bottom 
+     assign dugmeMarginaLeva = section.settings.slide_button_margin_left 
+     assign dugmeMarginaDesna = section.settings.slide_button_margin_right 
+      assign sirinaVidea = section.settings.wrapperwidth 
+      assign visinaVidea = section.settings.wrapperheight 
+      assign sirinaVideaPosebno = section.settings.video_width 
+      assign visinaVideaPosebno = section.settings.video_height 
+      assign radioDugmeFormat = section.settings.pickFormat 
+   assign sirinaPitanja = section.settings.section_width_question
+   assign sirinaOdgovora = section.settings.section_width_answer 
+  assign  brzinaSlidera = section.settings.slideSpeed
+  assign dugmeBorderBojaHover = section.settings.slide_button_border_color_hover 
+  assign zaobljenjeKartice = section.settings.borderRadiusCard
+  assign neogranicenSkrol = section.settings.scrollInfinite
+
+assign dugmeBorder = section.settings.slide_button_border 
+     assign dugmeBorderRadius = section.settings.slide_button_radius 
+     assign dugmeBojaPozadine = section.settings.slide_button_background_color 
+     assign dugmeBojaPozadineHover = section.settings.slide_button_background_color_hover 
+     assign dugmeBojateksta = section.settings.slide_button_text_color 
+     assign dugmeBojatekstaHover = section.settings.slide_button_text_color_hover 
+     assign dugmeBorderBoja = section.settings.slide_button_border_color
+     assign boksShedov = section.settings.carouselShadow
+assign pozicijaStrelica = section.settings.section_arrow_position
+assign bojaStrelica = section.settings.section_arrow_color
+assign velicinaStrelica = section.settings.section_arrow_size
+assign distancaStrelica = section.settings.section_arrow_distance
+
+
+assign pozicijaStrelicaMobilni = section.settings.section_arrow_position_mobile
+assign bojaStrelicaMobilni = section.settings.section_arrow_color_mobile
+assign velicinaStrelicaMobilni = section.settings.section_arrow_size_mobile
+assign distancaStrelicaMobilni = section.settings.section_arrow_distance_mobile
+
+assign kolicinaKarticaMobilni = section.settings.slidePerScreen_mobile
+assign razmakIzmenjuKarticaMobilni = section.settings.slideSpacing_mobile
+assign autoPlejMobilni = section.settings.carouselAutoplay_mobile
+assign sirinaSlikeMobilni = section.settings.image_width_mobile
+assign sirinaKarticeMobilni = section.settings.card_width_mobile
+assign preduslovzaHelementMobilni = section.settings.section_title_mobile
+assign preduslovzaPelementMobilni = section.settings.section_textblock_mobile
+assign preduslovzaHelementSubheadlineMobilni = section.settings.subheadline_mobile
+assign sirinaSekcijeMobilni = section.settings.section_width_mobile
+assign punaSirinaKontentaMobilni = section.settings.content_fullwidth_mobile
+assign maksSirinaKontentaMobilni = section.settings.content_max_width_mobile
+assign maksSirinaUnutrasnjegKontentaMobilni = section.settings.inner_content_max_width_mobile
+assign bojapozadinesekcijeMobilni = section.settings.section_background_color_mobile
+assign bojapozadineunutraMobilni = section.settings.background_color_mobile
+assign podesavanjegornjemarginesekcijacelaMobilni = section.settings.section_margin_top_mobile
+assign podesavanjedonjemarginesekcijacelaMobilni = section.settings.section_margin_bottom_mobile
+assign podesavanjegornjegpadingacelasekcijaMobilni = section.settings.section_padding_top_mobile
+assign podesavanjedonjegpadingacelasekcijaMobilni = section.settings.section_padding_bottom_mobile
+assign horizontalnipadingcelasekcijaMobilni = section.settings.section_padding_horizontal_mobile
+assign velicinaHelementaMobilni = section.settings.section_title_type_mobile
+assign bojaHtekstaMobilni = section.settings.section_title_color_mobile
+assign pozicioniranjeHelementaMobilni = section.settings.section_title_alignment_mobile
+assign kastomfontHMobilni = section.settings.section_title_custom_font_mobile
+assign difoltnifontHMobilni = section.settings.section_title_font_mobile
+assign imefontaHMobilni = section.settings.section_title_font_name_mobile
+assign debljinafontaHMobilni = section.settings.section_title_font_weight_mobile
+assign velicinafontaracunarHMobilni = section.settings.section_title_font_size_mobile
+assign razmakizmedjuslovaracunarHMobilni = section.settings.section_title_line_height_mobile
+assign razmakizmedjureciracunarHMobilni = section.settings.section_title_letter_spacing_mobile
+assign velicinaHelementaKarticaMobilni = section.settings.cardsection_title_type_mobile
+assign bojaHtekstakarticaMobilni = section.settings.cardsection_title_color_mobile
+assign pozicioniranjeHelementakarticaMobilni = section.settings.cardsection_title_alignment_mobile
+assign kastomfontHkarticaMobilni = section.settings.cardsection_title_custom_font_mobile
+assign difoltnifontHkarticaMobilni = section.settings.cardsection_title_font_mobile
+assign imefontaHkarticaMobilni = section.settings.cardsection_title_font_name_mobile
+assign debljinafontaHkarticaMobilni = section.settings.cardsection_title_font_weight_mobile
+assign velicinafontaracunarHkarticaMobilni = section.settings.cardsection_title_font_size_mobile
+assign razmakizmedjuslovaracunarHkarticaMobilni = section.settings.cardsection_title_line_height_mobile
+assign razmakizmedjureciracunarHkarticaMobilni = section.settings.cardsection_title_letter_spacing_mobile
+assign preduslovzaHelementPaddingGornjikarticaMobilni = section.settings.cardsection_padding_top_heading_mobile
+assign preduslovzaHelementPaddingLevikarticaMobilni = section.settings.cardsection_padding_left_heading_mobile
+assign preduslovzaHelementPaddingDesnikarticaMobilni = section.settings.cardsection_padding_right_heading_mobile
+assign preduslovzaHelementPaddingDonjikarticaMobilni = section.settings.cardsection_padding_bottom_heading_mobile
+assign preduslovzaHelementPaddingGornjiMobilni = section.settings.section_padding_top_heading_mobile
+assign preduslovzaHelementPaddingLeviMobilni = section.settings.section_padding_left_heading_mobile
+assign preduslovzaHelementPaddingDesniMobilni = section.settings.section_padding_right_heading_mobile
+assign preduslovzaHelementPaddingDonjiMobilni = section.settings.section_padding_bottom_heading_mobile
+assign pozicioniranjePelementaMobilni = section.settings.section_paragraph_alignment_mobile
+assign bojatekstaPelementaMobilni = section.settings.section_textblock_color_mobile
+assign kastomPfontMobilni = section.settings.section_textblock_custom_font_mobile
+assign difoltnifontzaPMobilni = section.settings.section_textblock_font_mobile
+assign imefontaPelementaMobilni = section.settings.section_textblock_font_name_mobile
+assign debljinafontaPelementaMobilni = section.settings.section_textblock_font_weight_mobile
+assign velicinafontaPelementaMobilni = section.settings.section_textblock_font_size_mobile
+assign razmakizmedjulinijaPfontMobilni = section.settings.section_textblock_line_height_mobile
+assign razmakizmedjuslovaPelementMobilni = section.settings.section_textblock_letter_spacing_mobile
+assign preduslovzaPelementPadingGornjiMobilni = section.settings.section_padding_top_paragraph_mobile
+assign preduslovzaPelementPadingLeviMobilni = section.settings.section_padding_left_paragraph_mobile
+assign preduslovzaPelementPadingDesniMobilni = section.settings.section_padding_right_paragraph_mobile
+assign preduslovzaPelementPadingDonjiMobilni = section.settings.section_padding_bottom_paragraph_mobile
+assign pozicioniranjePelementakarticaMobilni = section.settings.cardsection_paragraph_alignment_mobile
+assign bojatekstaPelementakarticaMobilni = section.settings.cardsection_textblock_color_mobile
+assign kastomPfontkarticaMobilni = section.settings.cardsection_textblock_custom_font_mobile
+assign difoltnifontzaPkarticaMobilni = section.settings.cardsection_textblock_font_mobile
+assign imefontaPelementakarticaMobilni = section.settings.cardsection_textblock_font_name_mobile
+assign debljinafontaPelementakarticaMobilni = section.settings.cardsection_textblock_font_weight_mobile
+assign velicinafontaPelementakarticaMobilni = section.settings.cardsection_textblock_font_size_mobile
+assign razmakizmedjulinijaPfontkarticaMobilni = section.settings.cardsection_textblock_line_height_mobile
+assign razmakizmedjuslovaPelementkarticaMobilni = section.settings.cardsection_textblock_letter_spacing_mobile
+assign preduslovzaPelementPadingGornjikarticaMobilni = section.settings.cardsection_padding_top_paragraph_mobile
+assign preduslovzaPelementPadingLevikarticaMobilni = section.settings.cardsection_padding_left_paragraph_mobile
+assign preduslovzaPelementPadingDesnikarticaMobilni = section.settings.cardsection_padding_right_paragraph_mobile
+assign preduslovzaPelementPadingDonjikarticaMobilni = section.settings.cardsection_padding_bottom_paragraph_mobile
+assign velicinaHelementaSubheadlineMobilni = section.settings.subheadline_type_mobile
+assign bojaHtekstaSubheadlineMobilni = section.settings.subheadline_color_mobile
+assign pozicioniranjeHelementaSubheadlineMobilni = section.settings.subheadline_alignment_mobile
+assign kastomfontHSubheadlineMobilni = section.settings.subheadline_custom_font_mobile
+assign difoltnifontHSubheadlineMobilni = section.settings.subheadline_font_mobile
+assign imefontaHSubheadlineMobilni = section.settings.subheadline_font_name_mobile
+assign debljinafontaHSubheadlineMobilni = section.settings.subheadline_font_weight_mobile
+assign velicinafontaracunarHSubheadlineMobilni = section.settings.subheadline_font_size_mobile
+assign razmakizmedjuslovaracunarHSubheadlineMobilni = section.settings.subheadline_line_height_mobile
+assign razmakizmedjureciracunarHSubheadlineMobilni = section.settings.subheadline_letter_spacing_mobile
+assign preduslovzaHelementPaddingGornjiSubheadlineMobilni = section.settings.section_padding_top_subheadline_mobile
+assign preduslovzaHelementPaddingLeviSubheadlineMobilni = section.settings.section_padding_left_subheadline_mobile
+assign preduslovzaHelementPaddingDesniSubheadlineMobilni = section.settings.section_padding_right_subheadline_mobile
+assign preduslovzaHelementPaddingDonjiSubheadlineMobilni = section.settings.section_padding_bottom_subheadline_mobile
+assign kastomFontDugmeMobilni = section.settings.slide_button_custom_font_mobile
+assign pozicioniranjeDugmetaMobilni = section.settings.section_button_alignment_mobile
+assign debljinaFontaDugmeMobilni = section.settings.slide_button_font_weight_mobile
+assign DugmeVelicinaFontaMobilni = section.settings.slide_button_font_size_mobile
+assign dugmeRazmakIzmedjuSlovaMobilni = section.settings.slide_button_letter_spacing_mobile
+assign dugmePadingHorizontalniMobilni = section.settings.slide_button_padding_horizontal_mobile
+assign dugmePadingVertikalniMobilni = section.settings.slide_button_padding_vertical_mobile
+assign dugmeMarginaGornjaMobilni = section.settings.slide_button_margin_top_mobile
+assign dugmeMarginaDonjaMobilni = section.settings.slide_button_margin_bottom_mobile
+assign dugmeMarginaLevaMobilni = section.settings.slide_button_margin_left_mobile
+assign dugmeMarginaDesnaMobilni = section.settings.slide_button_margin_right_mobile
+assign sirinaVideaMobilni = section.settings.wrapperwidth_mobile
+assign visinaVideaMobilni = section.settings.wrapperheight_mobile
+assign sirinaVideaPosebnoMobilni = section.settings.video_width_mobile
+assign visinaVideaPosebnoMobilni = section.settings.video_height_mobile
+assign radioDugmeFormatMobilni = section.settings.pickFormat_mobile
+assign sirinaPitanjaMobilni = section.settings.section_width_question_mobile
+assign sirinaOdgovoraMobilni = section.settings.section_width_answer_mobile
+
+assign dugmeBorderMobilni = section.settings.slide_button_border_mobile
+     assign dugmeBorderRadiusMobilni = section.settings.slide_button_radius_mobile
+     assign dugmeBojaPozadineMobilni = section.settings.slide_button_background_color_mobile
+     assign dugmeBojaPozadineHoverMobilni = section.settings.slide_button_background_color_hover_mobile
+     assign dugmeBojatekstaMobilni = section.settings.slide_button_text_color_mobile
+     assign dugmeBojatekstaHoverMobilni = section.settings.slide_button_text_color_hover_mobile
+     assign dugmeBorderBojaMobilni = section.settings.slide_button_border_color_mobile
+     assign dugmeBorderBojaHoverMobilni = section.settings.slide_button_border_color_hover_mobile
+
+
+
+%}
+<section>
+ <div class="carouselTitles">
+       <div>
+       {%- if preduslovzaHelement != blank -%}
+          <{{velicinaHelementa}} class="section-title">{{preduslovzaHelement}}</{{velicinaHelementa}}>
+        {%- endif -%}
+        </div>
+            <div class="subheadlineContainer">
+       {% if preduslovzaHelementSubheadline != blank %}
+                <{{velicinaHelementaSubheadline}} class="subheadline">{{preduslovzaHelementSubheadline}}</{{velicinaHelementaSubheadline}}>
+            {% endif %}
+            </div>
+        {%- if preduslovzaPelement != blank -%}
+        <div class="UX-custom-paragraph">
+                    {{preduslovzaPelement}}
+                </div>
+      {%- endif -%}
+                </div>
+
+<div id="mySwiper" class="swiper mySwiper container"
+data-cardNumber="{{kolicinaKartica}}"
+data-autoPlay="{{ autoPlej }}"
+data-speed="{{ brzinaSlidera }}"
+data-card-space="{{ razmakIzmenjuKartica }}"
+data-swiper-infinitee="{{ neogranicenSkrol }}"> 
+ <div class="swiper-wrapper content">
+{% for block in section.blocks %}
+ {% assign dugmePocetniTekstKartica = block.settings.cardbutton_label %}
+ {% assign dugmeLinkKartica = block.settings.cardbutton_url  %}
+ {% assign preduslovzaHelementKartica = block.settings.cardsection_title %}
+ {%  assign preduslovzaPelementKartica = block.settings.cardsection_textblock %}
+  {% assign urlSlike = block.settings.urlSlike  %}
+ 
+  
+  {%- case block.type -%}
+   {%- when 'contentBlock' -%}
+
+        <div class="swiper-slide card">
+          <div class="card-content">
+     {%- assign urlSlike =  urlSlike | img_url: 'master' -%}
+             <img class="ux-image" src="{{ urlSlike }}"/>
+            <div class="ux-text">
+              {%- if preduslovzaHelementKartica != blank -%}
+                <{{velicinaHelementaKartica}} class="section-title-card">{{preduslovzaHelementKartica}}</{{velicinaHelementaKartica}}>
+              {%- endif -%}
+              {%- if preduslovzaPelementKartica != blank -%}
+                <div class="UX-custom-paragraph-card">
+                    {{preduslovzaPelementKartica}}
+                </div>
+              {%- endif -%}
+            </div>
+             {%- if dugmePocetniTekstKartica != blank -%}
+              <div class="UXfeature-row__text-button ux-button">
+               <a href="{{ dugmeLinkKartica }}" class="ux-btn">
+                {{ dugmePocetniTekstKartica }}
+               </a>         
+              </div>
+             {% endif %}
+          </div>
+        </div>
+  
+{% endcase %}
+{% endfor %}
+
+   
+
+</div>
+ </div>
+        <div class="swiper-button-next middle nxt"></div>
+      <div class="swiper-button-prev middle"></div>
+<!--       <div class="swiper-pagination"></div>            -->
+         <div class="bottom-button_container">         
+      <div class="swiper-button-prev bottom"></div>
+      <div class="swiper-button-next bottom nxt"></div>
+                </div>
+  </section>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4=" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.4/swiper-bundle.min.js"></script>
+
+
+
+
+
+{% schema %}
+{
+   "name":"EmbedUX - Carousel",
+   "tag":"section",
+   "class":"spaced-section",
+   "settings":[
+      {
+         "type":"header",
+         "content":"IMPORTANT INFORMATION",
+         "info":"All possible customizations for an element are marked with the same number (e.g. [1]). Making it easier to identify the options that are relevant to the same element."
+      },
+      {
+         "type":"header",
+         "content":"SECTION STYLING - [1]"
+      },
+      {
+         "type":"color",
+         "id":"section_background_color",
+         "label":"Section Background Color - [1]"
+      },
+      {
+         "type":"color",
+         "id":"background_color",
+         "label":"Card Background Color - [1]"
+      },
+      {
+         "type":"range",
+         "id":"content_max_width",
+         "min":50,
+         "max":100,
+         "step":10,
+         "unit":"%",
+         "label":"Section Max Width - [1]",
+         "default":100
+      },
+      {
+         "type":"range",
+         "id":"section_margin_top",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Section Top Margin - [1]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_margin_bottom",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Section Bottom Margin - [1]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Section Top Padding - [1]",
+         "default":50
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Section Bottom Padding - [1]",
+         "default":50
+      },
+      {
+         "type":"range",
+         "id":"section_padding_horizontal",
+         "min":0,
+         "max":500,
+         "step":5,
+         "unit":"px",
+         "label":"Section Horizontal Padding - [1]",
+         "default":140
+      },
+     
+      {
+         "type":"header",
+         "content":"HEADLINE STYLING - [2]"
+      },
+     {
+                "type": "text",
+                "id": "section_title",
+                "label": "Headline",
+                "default": "Please enter your text(optional)",
+                "info" : "Add '<br>' to move the text after it to the next line"
+               },
+      {
+         "type":"select",
+         "id":"section_title_type",
+         "options":[
+            {
+               "value":"h1",
+               "label":"H1"
+            },
+            {
+               "value":"h2",
+               "label":"H2"
+            },
+            {
+               "value":"h3",
+               "label":"H3"
+            },
+            {
+               "value":"h4",
+               "label":"H4"
+            },
+            {
+               "value":"h5",
+               "label":"H5"
+            },
+            {
+               "value":"h6",
+               "label":"H6"
+            }
+         ],
+         "default":"h2",
+         "label":"Heading Tags - [2]",
+         "info":"Use Heading Tags for better SEO."
+      },
+      {
+         "type":"color",
+         "id":"section_title_color",
+         "label":"Headline Color - [2]",
+         "default":"#000"
+      },
+      {
+         "type":"select",
+         "id":"section_title_alignment",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"left",
+         "label":"Headline Alignment - [2]"
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_heading",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Headline Top Padding - [2]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_heading",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Headline Bottom Padding - [2]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_left_heading",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Headline Left Padding - [2]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_right_heading",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Headline Right Padding - [2]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"section_title_custom_font",
+         "label":"Headline Custom Font - [2]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"section_title_font",
+         "label":"Headline Font - [2]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"section_title_font_name",
+         "label":"Custom Font Family Name - [2]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"section_title_font_weight",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Headline Font Weight - [2]"
+      },
+      {
+         "type":"range",
+         "id":"section_title_font_size",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Headline Font Size - [2]",
+         "default":36
+      },
+      {
+         "type":"range",
+         "id":"section_title_line_height",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Headline Line Height - [2]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_title_letter_spacing",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Headline Letter Spacing - [2]",
+         "default":0
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+      {
+         "type":"header",
+         "content":"SUBHEADLINE STYLING - [3]"
+      },
+     {
+        "type": "text",
+        "id": "subheadline",
+        "label": "Subheadline",
+        "default": "Please enter your text(optional)"
+    },
+      {
+         "type":"select",
+         "id":"subheadline_type",
+         "options":[
+            {
+               "value":"h1",
+               "label":"H1"
+            },
+            {
+               "value":"h2",
+               "label":"H2"
+            },
+            {
+               "value":"h3",
+               "label":"H3"
+            },
+            {
+               "value":"h4",
+               "label":"H4"
+            },
+            {
+               "value":"h5",
+               "label":"H5"
+            },
+            {
+               "value":"h6",
+               "label":"H6"
+            }
+         ],
+         "default":"h3",
+         "label":"Subheadline Tags - [3]",
+         "info":"Use Heading Tags for better SEO."
+      },
+      {
+         "type":"color",
+         "id":"subheadline_color",
+         "label":"Subheadline Color - [3]",
+         "default":"#000000"
+      },
+      {
+         "type":"select",
+         "id":"subheadline_alignment",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"left",
+         "label":"Subheadline Alignment - [3]"
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_subheadline",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Subheadline Top Padding - [3]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_subheadline",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Subheadline Bottom Padding - [3]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_left_subheadline",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Subheadline Left Padding - [3]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_right_subheadline",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Subheadline Right Padding - [3]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"subheadline_custom_font",
+         "label":"Subheadline Custom Font - [3]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"subheadline_font",
+         "label":"Subheadline Font - [3]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"subheadline_font_name",
+         "label":"Custom Font Family Name - [3]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"subheadline_font_weight",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"400",
+         "label":"Subheadline Font Weight - [3]"
+      },
+      {
+         "type":"range",
+         "id":"subheadline_font_size",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Subheadline Font Size - [3]",
+         "default":25
+      },
+      {
+         "type":"range",
+         "id":"subheadline_line_height",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Subheadline Line Height - [3]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"subheadline_letter_spacing",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Subheadline Letter Spacing - [3]",
+         "default":0
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+      {
+         "type":"header",
+         "content":"PARAGRAPH STYLING - [4]"
+      },
+     
+     {
+        "type": "richtext",
+        "id": "section_textblock",
+        "label": "Paragraph Text"
+    },
+    
+      {
+         "type":"color",
+         "id":"section_textblock_color",
+         "label":"Paragraph Color - [4]",
+         "default":"#000000"
+      },
+      {
+         "type":"select",
+         "id":"section_paragraph_alignment",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"left",
+         "label":"Paragraph Alignment - [4]"
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_paragraph",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Paragraph Top Padding - [4]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_paragraph",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Paragraph Bottom Padding - [4]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_left_paragraph",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Paragraph Left Padding - [4]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_right_paragraph",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Paragraph Right Padding - [4]",
+         "default":70
+      },
+      {
+         "type":"checkbox",
+         "id":"section_textblock_custom_font",
+         "label":"Paragraph Custom Font - [4]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"section_textblock_font",
+         "label":"Paragraph Font - [4]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"section_textblock_font_name",
+         "label":"Custom Font Family Name - [4]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"section_textblock_font_weight",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Paragraph Font Weight - [4]"
+      },
+      {
+         "type":"range",
+         "id":"section_textblock_font_size",
+         "min":0,
+         "max":64,
+         "step":1,
+         "unit":"px",
+         "label":"Paragraph Font Size - [4]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_textblock_line_height",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Paragraph Line Height - [4]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_textblock_letter_spacing",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Paragraph Letter Spacing - [4]",
+         "default":2
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+     {
+         "type":"header",
+         "content":"CARD IMAGE STYLING - [5]"
+      },
+     {
+        "type": "checkbox",
+        "id": "carouselShadow",
+        "label": "BoxShadow - [5]",
+        "default": true
+    },
+     {
+        "type": "range",
+        "id": "borderRadiusCard",
+        "label": "Card Border Radius - [5]",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px"
+      },
+     
+     {
+        "type": "select",
+        "id": "image_width",
+        "label": "Image Size - [5]",
+         "options":[
+            {
+               "value": "square",
+               "label":"Square"
+            },
+            {
+               "value": "portrait",
+               "label":"Portrait"
+            },
+            {
+               "value": "landscape",
+               "label":"Landscape"
+            },
+           
+            {
+               "value": "original",
+               "label":"Original"
+            }
+         ],
+         "default": "square"
+      },
+     {
+         "type":"select",
+         "id":"slidePerScreen",
+         "options":[
+            {
+               "value": "2",
+               "label":"Two"
+            },
+            {
+               "value": "4",
+               "label":"Four"
+            },
+            {
+               "value": "6",
+               "label":"Six"
+            }
+         ],
+         "default": "4",
+         "label":"Slide Per Screen - [5]"
+      },
+     {
+        "type": "range",
+        "id": "slideSpacing",
+        "label": "Slide Space Between - [5]",
+        "default": 10,
+        "min": 10,
+        "max": 50,
+        "step": 10,
+        "unit": "px"
+      },
+     {
+        "type": "checkbox",
+        "id": "carouselAutoplay",
+        "label": "Autoplay - [5]",
+        "default": false
+    },
+     {
+        "type": "checkbox",
+        "id": "scrollInfinite",
+        "label": "Infinite Scroll - [5]",
+        "default": false
+    },
+     
+     {
+        "type": "range",
+        "id": "slideSpeed",
+        "label": "Slide Speed - [5]",
+        "default": 5,
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "unit": "sec"
+      },
+     {
+         "type":"header",
+         "content":"CARD HEADLINE STYLING - [6]"
+      },
+     
+      {
+         "type":"select",
+         "id":"cardsection_title_type",
+         "options":[
+            {
+               "value":"h1",
+               "label":"H1"
+            },
+            {
+               "value":"h2",
+               "label":"H2"
+            },
+            {
+               "value":"h3",
+               "label":"H3"
+            },
+            {
+               "value":"h4",
+               "label":"H4"
+            },
+            {
+               "value":"h5",
+               "label":"H5"
+            },
+            {
+               "value":"h6",
+               "label":"H6"
+            }
+         ],
+         "default":"h2",
+         "label":"Card Heading Tags - [6]",
+         "info":"Use Heading Tags for better SEO."
+      },
+      {
+         "type":"color",
+         "id":"cardsection_title_color",
+         "label":"Card Headline Color - [6]",
+         "default":"#000"
+      },
+      {
+         "type":"select",
+         "id":"cardsection_title_alignment",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"left",
+         "label":"Card Headline Alignment - [6]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_top_heading",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Card Headline Top Padding - [6]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_bottom_heading",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Card Headline Bottom Padding - [6]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_left_heading",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Card Headline Left Padding - [6]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_right_heading",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Card Headline Right Padding - [6]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"cardsection_title_custom_font",
+         "label":"Card Headline Custom Font - [6]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"cardsection_title_font",
+         "label":"Card Headline Font - [6]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"cardsection_title_font_name",
+         "label":"Custom Font Family Name - [6]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"cardsection_title_font_weight",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Card Headline Font Weight - [6]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_title_font_size",
+         "min":0,
+         "max":18,
+         "step":1,
+         "unit":"px",
+         "label":"Card Headline Font Size - [6]",
+         "default":18
+      },
+      {
+         "type":"range",
+         "id":"cardsection_title_line_height",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Card Headline Line Height - [6]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"cardsection_title_letter_spacing",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Card Headline Letter Spacing - [6]",
+         "default":0
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+     {
+         "type":"header",
+         "content":"CARD PARAGRAPH STYLING - [7]"
+      },
+     
+     
+      {
+         "type":"color",
+         "id":"cardsection_textblock_color",
+         "label":"Card Paragraph Color - [7]",
+         "default":"#000000"
+      },
+      {
+         "type":"select",
+         "id":"cardsection_paragraph_alignment",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"left",
+         "label":"Card Paragraph Alignment - [7]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_top_paragraph",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Card Paragraph Top Padding - [7]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_bottom_paragraph",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Card Paragraph Bottom Padding - [7]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_left_paragraph",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Card Paragraph Left Padding - [7]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_right_paragraph",
+         "min":0,
+         "max":300,
+         "step":5,
+         "unit":"px",
+         "label":"Card Paragraph Right Padding - [7]",
+         "default":70
+      },
+      {
+         "type":"checkbox",
+         "id":"cardsection_textblock_custom_font",
+         "label":"Card Paragraph Custom Font - [7]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"cardsection_textblock_font",
+         "label":"Card Paragraph Font - [7]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"cardsection_textblock_font_name",
+         "label":"Custom Font Family Name - [7]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"cardsection_textblock_font_weight",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Card Paragraph Font Weight - [7]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_textblock_font_size",
+         "min":0,
+         "max":64,
+         "step":1,
+         "unit":"px",
+         "label":"Card Paragraph Font Size - [7]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_textblock_line_height",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Card Paragraph Line Height - [7]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"cardsection_textblock_letter_spacing",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Card Paragraph Letter Spacing - [7]",
+         "default":2
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+     {
+        "type": "header",
+        "content": "BUTTON STYLING - [8]"
+    },
+     
+                {
+            "type": "color",
+            "id": "slide_button_text_color",
+            "label": "Button Text Color - [8]",
+            "default": "#333333"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_background_color",
+            "label": "Button Background Color - [8]"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_border_color",
+            "label": "Button Border Color - [8]",
+             "default": "#333333"
+        },
+    {
+            "type": "color",
+            "id": "slide_button_text_color_hover",
+            "label": "Button Hover Text Color - [8]",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_background_color_hover",
+            "label": "Button Hover Background Color - [8]",
+            "default": "#333333"
+        },
+        
+        {
+            "type": "color",
+            "id": "slide_button_border_color_hover",
+            "label": "Button Hover Border Color - [8]"
+        },
+    {
+        "type": "checkbox",
+        "id": "slide_button_custom_font",
+        "label": "Button Custom Font - [8]",
+        "default": false
+    },
+    {
+        "type": "font_picker",
+        "id": "button_font",
+        "label": "Button Font - [8]",
+        "default": "mono"
+    },
+    {
+        "type": "text",
+        "id": "button_font_name_custom",
+        "label": "Custom Font Family Name - [8]",
+        "info": "Add your custom font. Example: ‘Helvetica’, ‘Sans-Serif’."
+    }, 
+               {
+        "type": "select",
+        "id": "slide_button_font_weight",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Button Font Weight - [8]"
+    },
+    {
+            "type": "range",
+            "id": "slide_button_font_size",
+            "min": 0,
+            "max": 64,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Font Size - [8]",
+            "default": 16
+        },
+               {
+            "type": "range",
+            "id": "slide_button_letter_spacing",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Letter Spacing - [8]",
+            "default": 0
+        },
+        
+       
+       
+            
+        {
+            "type": "range",
+            "id": "slide_button_padding_horizontal",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "px",
+            "label": "Button Horizontal Padding [8]",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "slide_button_padding_vertical",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Vertical Padding [8]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_border",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Border Width [8]",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "slide_button_radius",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Button Border Radius [8]",
+            "default": 0
+        }, 
+       {
+            "type": "range",
+            "id": "slide_button_margin_top",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Margin Top [8]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Margin Bottom [8]",
+            "default": 10
+        },
+    {
+            "type": "range",
+            "id": "slide_button_margin_left",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Margin Left [8]",
+            "default": 22
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_right",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Button Margin Right [8]",
+            "default": 10
+        },
+    {
+        "type": "select",
+        "id": "section_button_alignment",
+        "options": [
+            {
+                "value": "left",
+                "label": "Left"
+            },
+            {
+                "value": "center",
+                "label": "Center"
+            },
+            {
+                "value": "right",
+                "label": "Right"
+            }
+        ],
+        "default": "left",
+        "label": "Button Alignment - [8]"
+    },
+
+        {
+        "type": "select",
+        "id": "section_arrow_position",
+        "options": [
+           
+            {
+                "value": "center",
+                "label": "On The Cards"
+            },
+            {
+                "value": "under",
+                "label": "Under The Cards"
+            }
+        ],
+        "default": "center",
+        "label": "Arrow Position - [8]"
+    },
+
+       {
+            "type": "color",
+            "id": "section_arrow_color",
+            "label": "Arrow Color - [8]",
+             "default": "#151515"
+        },
+     
+      {
+         "type":"paragraph",
+         "content":"Settings for arrows under the cards:"
+      },
+         {
+            "type": "range",
+            "id": "section_arrow_size",
+            "min": 15,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Arrow size [8]",
+            "default": 32
+        },
+       {
+            "type": "range",
+            "id": "section_arrow_distance",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "%",
+            "label": "Arrow Distance [8]",
+            "default": 32
+        },
+
+  
+      {
+         "type":"header",
+         "content":"MOBILE SECTION STYLING - [9]"
+      },
+      {
+         "type":"color",
+         "id":"section_background_color_mobile",
+         "label":"Mobile Section Background Color - [9]"
+      },
+      {
+         "type":"color",
+         "id":"background_color_mobile",
+         "label":"Mobile Card Background Color - [9]"
+      },
+      {
+         "type":"range",
+         "id":"content_max_width_mobile",
+         "min":10,
+         "max":100,
+         "step":5,
+         "unit":"%",
+         "label":"Mobile Section Max Width - [9]",
+         "default":100
+      },
+      {
+         "type":"range",
+         "id":"section_margin_top_mobile",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Section Top Margin - [9]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_margin_bottom_mobile",
+         "min":0,
+         "max":200,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Section Bottom Margin - [9]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Section Top Padding - [9]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Section Bottom Padding - [9]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_horizontal_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Section Horizontal Padding - [9]",
+         "default":0
+      },
+      {
+         "type":"header",
+         "content":"MOBILE HEADLINE STYLING - [10]"
+      },
+      {
+         "type":"color",
+         "id":"section_title_color_mobile",
+         "label":"Mobile Headline Color  - [10]",
+         "default":"#000000"
+      },
+      {
+         "type":"select",
+         "id":"section_title_alignment_mobile",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"center",
+         "label":"Mobile Headline Alignment  - [10]"
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Headline Top Padding  - [10]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Headline Bottom Padding  - [10]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_left_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Headline Left Padding  - [10]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_right_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Headline Right Padding  - [10]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"section_title_custom_font_mobile",
+         "label":"Mobile Headline Custom Font - [10]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"section_title_font_mobile",
+         "label":"Mobile Headline Font - [10]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"section_title_font_name_mobile",
+         "label":"Mobile Custom Font Family Name - [10]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"section_title_font_weight_mobile",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Mobile Headline Font Weight  - [10]"
+      },
+      {
+         "type":"range",
+         "id":"section_title_font_size_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Headline Font Size  - [10]",
+         "default":26
+      },
+      {
+         "type":"range",
+         "id":"section_title_line_height_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Headline Line Height  - [10]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_title_letter_spacing_mobile",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Headline Letter Spacing  - [10]",
+         "default":0
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+      {
+         "type":"header",
+         "content":"MOBILE SUBHEADLINE STYLING - [11]"
+      },
+      {
+         "type":"color",
+         "id":"subheadline_color_mobile",
+         "label":"Mobile Subheadline Color - [11]",
+         "default":"#000000"
+      },
+      {
+         "type":"select",
+         "id":"subheadline_alignment_mobile",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"center",
+         "label":"Mobile Subheadline Alignment - [11]"
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_subheadline_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Subheadline Top Padding - [11]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_subheadline_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Subheadline Bottom Padding - [11]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_left_subheadline_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Subheadline Left Padding - [11]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_padding_right_subheadline_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Subheadline Right Padding - [11]",
+         "default":0
+      },
+      {
+         "type":"checkbox",
+         "id":"subheadline_custom_font_mobile",
+         "label":"Mobile Subheadline Custom Font - [11]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"subheadline_font_mobile",
+         "label":"Mobile Subheadline Font - [11]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"subheadline_font_name_mobile",
+         "label":"Mobile Custom Font Family Name - [11]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"subheadline_font_weight_mobile",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Mobile Subheadline Font Weight - [11]"
+      },
+      {
+         "type":"range",
+         "id":"subheadline_font_size_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Subheadline Font Size - [11]",
+         "default":18
+      },
+      {
+         "type":"range",
+         "id":"subheadline_line_height_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Subheadline Line Height - [11]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"subheadline_letter_spacing_mobile",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Subheadline Letter Spacing - [11]",
+         "default":0
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+      {
+         "type":"header",
+         "content":"MOBILE  PARAGRAPH STYLING - [12]"
+      },
+      {
+         "type":"color",
+         "id":"section_textblock_color_mobile",
+         "label":"Mobile Paragraph Color - [12]",
+         "default":"#000"
+      },
+      {
+         "type":"select",
+         "id":"section_paragraph_alignment_mobile",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"center",
+         "label":"Mobile Paragraph Alignment - [12]"
+      },
+      {
+         "type":"range",
+         "id":"section_padding_top_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Paragraph Top Padding - [12]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_bottom_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Paragraph Bottom Padding - [12]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_left_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Paragraph Left Padding - [12]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"section_padding_right_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Paragraph Right Padding - [12]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"section_textblock_custom_font_mobile",
+         "label":"Mobile Paragraph Custom Font - [12]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"section_textblock_font_mobile",
+         "label":"Mobile Paragraph Font - [12]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"section_textblock_font_name_mobile",
+         "label":"Mobile Custom Font Family Name - [12]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"section_textblock_font_weight_mobile",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Mobile Paragraph Font Weight - [12]"
+      },
+      {
+         "type":"range",
+         "id":"section_textblock_font_size_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Paragraph Font Size - [12]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_textblock_line_height_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Paragraph Line Height - [12]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"section_textblock_letter_spacing_mobile",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Paragraph Letter Spacing - [12]",
+         "default":0
+      },
+     {
+         "type":"header",
+         "content":"MOBILE CARD HEADLINE STYLING - [13]"
+      },
+      {
+         "type":"color",
+         "id":"cardsection_title_color_mobile",
+         "label":"Mobile Card Headline Color  - [13]",
+         "default":"#000000"
+      },
+      {
+         "type":"select",
+         "id":"cardsection_title_alignment_mobile",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"center",
+         "label":"Mobile Card Headline Alignment  - [13]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_top_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Headline Top Padding  - [13]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_bottom_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Headline Bottom Padding  - [13]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_left_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Headline Left Padding  - [13]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_right_heading_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Headline Right Padding  - [13]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"cardsection_title_custom_font_mobile",
+         "label":"Mobile Card Headline Custom Font - [13]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"cardsection_title_font_mobile",
+         "label":"Mobile Card Headline Font - [13]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"cardsection_title_font_name_mobile",
+         "label":"Mobile Custom Font Family Name - [13]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"cardsection_title_font_weight_mobile",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Mobile Card Headline Font Weight  - [13]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_title_font_size_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Card Headline Font Size  - [13]",
+         "default":26
+      },
+      {
+         "type":"range",
+         "id":"cardsection_title_line_height_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Card Headline Line Height  - [13]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"cardsection_title_letter_spacing_mobile",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Card Headline Letter Spacing  - [13]",
+         "default":0
+      },
+      {
+         "type":"paragraph",
+         "content":"Set value to 0 to use your theme's default values."
+      },
+     {
+         "type":"header",
+         "content":"MOBILE CARD PARAGRAPH STYLING - [14]"
+      },
+      {
+         "type":"color",
+         "id":"cardsection_textblock_color_mobile",
+         "label":"Mobile Card Paragraph Color - [14]",
+         "default":"#000"
+      },
+      {
+         "type":"select",
+         "id":"cardsection_paragraph_alignment_mobile",
+         "options":[
+            {
+               "value":"left",
+               "label":"Left"
+            },
+            {
+               "value":"center",
+               "label":"Center"
+            },
+            {
+               "value":"right",
+               "label":"Right"
+            }
+         ],
+         "default":"center",
+         "label":"Mobile Card Paragraph Alignment - [14]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_top_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Top Padding - [14]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_bottom_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Bottom Padding - [14]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_left_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Left Padding - [14]",
+         "default":20
+      },
+      {
+         "type":"range",
+         "id":"cardsection_padding_right_paragraph_mobile",
+         "min":0,
+         "max":100,
+         "step":5,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Right Padding - [14]",
+         "default":20
+      },
+      {
+         "type":"checkbox",
+         "id":"cardsection_textblock_custom_font_mobile",
+         "label":"Mobile Card Paragraph Custom Font - [14]",
+         "default":false
+      },
+      {
+         "type":"font_picker",
+         "id":"cardsection_textblock_font_mobile",
+         "label":"Mobile Card Paragraph Font - [14]",
+         "default":"mono"
+      },
+      {
+         "type":"text",
+         "id":"cardsection_textblock_font_name_mobile",
+         "label":"Mobile Custom Font Family Name - [14]",
+         "info":"Add your custom font. Example: ‘Helvetica’, sans-serif."
+      },
+      {
+         "type":"select",
+         "id":"cardsection_textblock_font_weight_mobile",
+         "options":[
+            {
+               "value":"default",
+               "label":"Default"
+            },
+            {
+               "value":"400",
+               "label":"Regular"
+            },
+            {
+               "value":"700",
+               "label":"Bold"
+            }
+         ],
+         "default":"default",
+         "label":"Mobile Card Paragraph Font Weight - [14]"
+      },
+      {
+         "type":"range",
+         "id":"cardsection_textblock_font_size_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Font Size - [14]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"cardsection_textblock_line_height_mobile",
+         "min":0,
+         "max":100,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Line Height - [14]",
+         "default":0
+      },
+      {
+         "type":"range",
+         "id":"cardsection_textblock_letter_spacing_mobile",
+         "min":0,
+         "max":10,
+         "step":1,
+         "unit":"px",
+         "label":"Mobile Card Paragraph Letter Spacing - [14]",
+         "default":0
+      },
+     {
+    "type": "header",
+    "content": "MOBILE BUTTON STYLING - [15]"
+    },
+    {
+            "type": "color",
+            "id": "slide_button_text_color_mobile",
+            "label": "Mobile Button Text Color - [15]",
+            "default": "#333333"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_background_color_mobile",
+            "label": "Mobile Button Background Color - [15]"
+        },
+        {
+            "type": "color",
+            "id": "slide_button_border_color_mobile",
+            "label": "Mobile Button Border Color - [15]",
+             "default": "#333333"
+        },
+    {
+            "type": "color",
+            "id": "slide_button_text_color_hover_mobile",
+            "label": "Mobile Button Hover Text Color - [15]",
+            "default": "#ffffff"
+        },
+ {
+            "type": "color",
+            "id": "slide_button_background_color_hover_mobile",
+            "label": "Mobile Button Hover Background Color - [15]",
+            "default": "#333333"
+        },
+        
+        {
+            "type": "color",
+            "id": "slide_button_border_color_hover_mobile",
+            "label": "Mobile Button Hover Border Color - [15]"
+        },
+     {
+        "type": "select",
+        "id": "slide_button_font_weight_mobile",
+        "options": [
+        {
+            "value": "default",
+            "label": "Default"
+        },
+        {
+            "value": "400",
+            "label": "Regular"
+        },
+        {
+            "value": "700",
+            "label": "Bold"
+        }
+        ],
+        "default": "default",
+        "label": "Mobile Button Font Weight - [15]",
+        "info": "Some fonts do not support all weight options."
+      
+    },
+    {
+            "type": "range",
+            "id": "slide_button_font_size_mobile",
+            "min": 0,
+            "max": 64,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Button Font Size - [15]",
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "slide_button_letter_spacing_mobile",
+            "min": 0,
+            "max": 4,
+            "step": 0.5,
+            "unit": "px",
+            "label": "Mobile Button Letter Spacing - [15]",
+            "default": 1.5
+        },
+           
+        
+        {
+            "type": "range",
+            "id": "slide_button_padding_horizontal_mobile",
+            "min": 0,
+            "max": 300,
+            "step": 10,
+            "unit": "px",
+            "label": "Mobile Button Horizontal Padding - [15]",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "slide_button_padding_vertical_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Vertical Padding - [15]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_border_mobile",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Button Border Width - [15]",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "slide_button_radius_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Button Border Radius - [15]",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_top_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin Top - [15]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_bottom_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin Bottom - [15]",
+            "default": 10
+        },
+    {
+            "type": "range",
+            "id": "slide_button_margin_left_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin Left - [15]",
+            "default": 10
+        },
+        {
+            "type": "range",
+            "id": "slide_button_margin_right_mobile",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "px",
+            "label": "Mobile Button Margin Right - [15]",
+            "default": 10
+        },
+     
+        {
+        "type": "select",
+        "id": "section_arrow_position_mobile",
+        "options": [
+           
+            {
+                "value": "center",
+                "label": "On The Cards"
+            },
+            {
+                "value": "under",
+                "label": "Under The Cards"
+            }
+        ],
+        "default": "center",
+        "label": "Arrow Position - [8]"
+    },
+
+       {
+            "type": "color",
+            "id": "section_arrow_color_mobile",
+            "label": "Mobile Arrow Color - [8]",
+             "default": "#151515"
+        },
+     
+      {
+         "type":"paragraph",
+         "content":"Settings for arrows under the cards:"
+      },
+         {
+            "type": "range",
+            "id": "section_arrow_size_mobile",
+            "min": 15,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "label": "Mobile Arrow size [8]",
+            "default": 32
+        },
+       {
+            "type": "range",
+            "id": "section_arrow_distance_mobile",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "%",
+            "label": "Mobile Arrow Distance [8]",
+            "default": 32
+        }
+   ],
+   "blocks":[
+      {
+         "type":"contentBlock",
+         "name":"EmbedUX - Card",
+         "settings":[
+           {
+            "type": "image_picker",
+            "id": "urlSlike",
+            "label": "Upload Image"
+        },
+           {
+                "type": "text",
+                "id": "cardsection_title",
+                "label": "Headline",
+                "default": "Please enter your text(optional)",
+                "info" : "Add '<br>' to move the text after it to the next line"
+               },
+              
+              {
+        "type": "richtext",
+        "id": "cardsection_textblock",
+        "label": "Paragraph Text"
+    },
+              {
+        "type": "text",
+        "id": "cardbutton_label",
+        "label": "Button Label",
+        "default": "Learn More"
+     },
+    {
+     "type": "url",
+      "id": "cardbutton_url",
+      "label": "Button Link"
+    }
+           
+            
+         ]
+      }
+   ],
+   "max_blocks":20,
+   "presets":[
+      {
+         "name":"EmbedUX - Carousel",
+         "blocks":[
+            {
+               "type":"contentBlock"
+            },
+           {
+               "type":"contentBlock"
+            },
+           {
+               "type":"contentBlock"
+            },
+           {
+               "type":"contentBlock"
+            }
+         ]
+      }
+   ]
+}
+    
+   
+{% endschema %}
+{%- style -%}
+/*STYLE FOR STOCK CAROUSEL*/
+*{
+    margin: 0;
+    padding: 0;
+  }
+
+#{{sectionID}} section{
+  position: relative;  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+ 
+  
+@media only screen and (min-width:768px){
+ #{{ sectionID }} {
+      margin: {{ podesavanjegornjemarginesekcijacela }}px auto {{ podesavanjedonjemarginesekcijacela }}px auto;
+    padding: {{ podesavanjegornjegpadingacelasekcija }}px {{ horizontalnipadingcelasekcija }}px {{ podesavanjedonjegpadingacelasekcija }}px; 
+  
+}  
+
+#{{sectionID}} section .carouselTitles {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+#{{sectionID}} {
+  width: {{maksSirinaKontenta}}%;
+  max-width: 100%;
+}
+
+
+
+#{{sectionID}} .card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  height: 100%;
+}
+
+
+#{{sectionID}} img.ux-image {
+  width: 100%;
+    {% if sirinaSlike == 'square' %}
+  width: 200px;
+  aspect-ratio: 1;
+
+  {% elsif sirinaSlike == 'portrait' %}
+  width: 100px;
+  height:200px;
+  object-fit: scale-down;
+      {% elsif sirinaSlike == 'landscape' %}
+  width: 200px;
+  height:100px;
+  object-fit: cover;
+      {% endif %}
+  background-size: contain!important; 
+  background-repeat: no-repeat!important;
+  background-position: center!important;
+}
+  
+}
+
+  #{{sectionID}}  .ux-text, #{{sectionID}}  .ux-button {
+  --duzinatextidugme: calc(400px - {{sirinaSlike}}%);
+  height: calc(var(--duzinatextidugme)/2);
+}
+
+
+
+#{{sectionID}} .card .ux-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  color: black;
+} 
+
+#{{sectionID}} .ux-text .heading{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#{{sectionID}} .card .ux-button{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  flex-direction: column;
+
+}
+
+#{{sectionID}} .card .ux-button button{
+  background: #7d2ae8;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#{{sectionID}} .ux-button button:hover{
+  background: #6616d0;
+}
+
+#{{sectionID}} .swiper-pagination{
+  position: absolute;
+  top: 450px;
+}
+
+#{{sectionID}} .swiper-pagination-bullet{
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: black;
+}
+
+  
+ 
+  
+
+
+  
+ {% if pozicijaStrelica == "center" %}
+#{{sectionID}} .swiper-button-next.middle, .swiper-button-prev.middle{
+  opacity: 0.7;
+  color: {{ bojaStrelica }};
+  transition: all 0.3s ease;
+  display: inline-flex;
+ 
+}
+   #{{sectionID}} .swiper-button-next.middle::after, .swiper-button-prev.middle::after{
+     font-size: {{velicinaStrelica}}px;
+     color: {{ bojaStrelica }};
+  }
+#{{sectionID}} .swiper-button-next.middle:hover, .swiper-button-prev.middle:hover{
+  opacity: 1;
+}
+#{{sectionID}} .swiper-button-next.bottom, .swiper-button-prev.bottom {
+  display: none;
+}
+
+  {% else pozicijaStrelica == "under" %}
+   .swiper-button-prev.bottom {
+    position: relative;
+     right: {{distancaStrelica}}%;
+     left: unset;
+     
+   }
+
+   .swiper-button-next.bottom {
+     position: relative;
+     left: {{distancaStrelica}}%;
+     right: unset;
+   }
+   #{{sectionID}} .swiper-button-next.bottom, .swiper-button-prev.bottom {
+  opacity: 0.7;
+  color: {{ bojaStrelica }};
+  transition: all 0.3s ease;
+  display: inline-flex;
+}
+  #{{sectionID}} .swiper-button-next.bottom::after, .swiper-button-prev.bottom::after{
+     font-size: {{velicinaStrelica}}px;
+  }
+#{{sectionID}} .swiper-button-next.bottom:hover, .swiper-button-prev.bottom:hover {
+  opacity: 1;
+}
+
+  #{{sectionID}} .swiper-button-next.middle, .swiper-button-prev.middle {
+  display: none;
+}
+  {% endif %}
+  .bottom-button_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin:20px;
+  }
+  
+#{{sectionID}} .card{
+  position: relative;
+  background: #fff;
+  border-radius: {{zaobljenjeKartice}}px;
+  margin: 20px 0;  
+  background-color: {{ bojapozadineunutra }};
+  overflow: hidden; 
+}
+
+ #{{ sectionID }} { 
+   background-color: {{ bojapozadinesekcije }};
+   }
+
+{% if boksShedov == true %}
+  #{{sectionID}} .card{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+{% endif %}  
+
+
+/*STYLE FOR HEADLINE SUBHEADLINE AND BUTTON FIRST PART BEFORE CARD PART*/
+/*HEADLINE*/
+{% if kastomfontH %} 
+ {{ difoltnifontH | font_face }} 
+ {% endif %} 
+  
+#{{sectionID}} section .carouselTitles .section-title {
+  
+{% if kastomfontH %} 
+   {% if imefontaH != blank %} 
+     font-family:{{ imefontaH }}; 
+     {% else %} font-family:{{ difoltnifontH.family}}, {{ difoltnifontH.fallback_families }}; 
+  {% endif %} 
+{%endif%} 
+  
+{% if debljinafontaH != "default" %}
+  font-weight: {{debljinafontaH}} !important;
+{%endif%} 
+} 
+  
+#{{sectionID}} section .carouselTitles .section-title { 
+{% if velicinafontaracunarH!= 0 %} 
+  font-size: {{ velicinafontaracunarH }}px;
+{% endif %} 
+
+  {% if razmakizmedjuslovaracunarH!= 0 %}
+    line-height:{{ razmakizmedjuslovaracunarH }}px;
+  {% endif %} 
+    {% if razmakizmedjureciracunarH!= 0 %}
+      letter-spacing:{{ razmakizmedjureciracunarH }}px;
+    {% endif %}      
+}
+  
+#{{sectionID}} section .carouselTitles .section-title { 
+      color: {{bojaHteksta}};
+}
+  
+#{{sectionID}} section .carouselTitles .section-title {
+  padding: {{preduslovzaHelementPaddingGornji}}px  {{preduslovzaHelementPaddingDesni}}px  {{preduslovzaHelementPaddingDonji}}px {{preduslovzaHelementPaddingLevi}}px;              
+}
+  
+#{{sectionID}} section .carouselTitles div {
+    width: 100%;
+}
+  
+#{{sectionID}} section .carouselTitles div .section-title {
+     text-align: {{ pozicioniranjeHelementa }};
+}
+ 
+ 
+/*SUBHEADLINE */
+ {% if kastomfontHSubheadline %} 
+  {{ difoltnifontHSubheadline | font_face }}
+   {% endif %}
+  
+
+#{{sectionID}} .carouselTitles .subheadlineContainer .subheadline {
+  
+  {% if kastomfontHSubheadline %} 
+     {% if imefontaHSubheadline != blank %} 
+       font-family:{{ imefontaHSubheadline }}; 
+       {% else %} font-family:{{ difoltnifontHSubheadline.family}}, {{ difoltnifontHSubheadline.fallback_families }}; 
+      {% endif %} 
+    {%endif%} 
+  
+}   
+  
+#{{sectionID}} .carouselTitles .subheadlineContainer .subheadline {
+    {% if debljinafontaHSubheadline != "default" %}
+      font-weight: {{debljinafontaHSubheadline}} !important;
+    {%endif%} 
+        
+    {% if bojaHtekstaSubheadline contains '#' %} 
+      color:{{ bojaHtekstaSubheadline }};
+    {% endif %} 
+} 
+  
+#{{sectionID}} .subheadlineContainer .subheadline {
+  padding: {{preduslovzaHelementPaddingGornjiSubheadline}}px  {{preduslovzaHelementPaddingDesniSubheadline}}px  {{preduslovzaHelementPaddingDonjiSubheadline}}px {{preduslovzaHelementPaddingLeviSubheadline}}px;              
+}
+  
+#{{sectionID}} .carouselTitles:nth-child(1) .subheadline {
+        {% if velicinafontaracunarHSubheadline!= 0 %} 
+          font-size: {{ velicinafontaracunarHSubheadline }}px;
+        {% endif %} 
+        
+          {% if razmakizmedjuslovaracunarHSubheadline!= 0 %}
+            line-height:{{ razmakizmedjuslovaracunarHSubheadline }}px;
+          {% endif %} 
+            {% if razmakizmedjureciracunarHSubheadline!= 0 %}
+              letter-spacing:{{ razmakizmedjureciracunarHSubheadline }}px;
+            {% endif %}     
+}
+  
+#{{sectionID}} .carouselTitles:nth-child(1){
+  width: 100%;
+}
+  
+#{{sectionID}} .carouselTitles:nth-child(1) .subheadline {
+    text-align: {{ pozicioniranjeHelementaSubheadline }};
+}
+  
+/*PARAGRAPH*/
+{% if kastomPfont %} 
+      {{ difoltnifontzaP | font_face }} 
+      {% endif %} 
+  
+#{{sectionID}} .carouselTitles .UX-custom-paragraph > p {
+                  
+{% if kastomPfont %} 
+   {% if imefontaPelementa != blank %} 
+     font-family:{{ imefontaPelementa }}; 
+   {% else %} font-family:{{ difoltnifontzaP.family}}, {{ difoltnifontzaP.fallback_families }}; 
+    {% endif %} 
+{%endif%} 
+}
+                  
+#{{sectionID}} .carouselTitles .UX-custom-paragraph { 
+{% if debljinafontaPelementa != "default" %}
+  font-weight: {{debljinafontaPelementa}} !important;
+{%endif%} 
+   text-align: {{ pozicioniranjePelementa }};
+{% if bojatekstaPelementa contains '#' %} 
+  color:{{ bojatekstaPelementa }};
+{%endif%} 
+} 
+  
+#{{sectionID}} .carouselTitles .UX-custom-paragraph {
+  width: 100%;
+}
+
+#{{sectionID}} .carouselTitles .UX-custom-paragraph{ 
+{% if velicinafontaPelementa!= 0 %} 
+  font-size: {{ velicinafontaPelementa }}px;
+{% endif %} 
+
+  {% if razmakizmedjulinijaPfont != 0 %}
+    line-height:{{ razmakizmedjulinijaPfont }}px;
+  {% endif %} 
+    {% if razmakizmedjuslovaPelement!= 0 %}
+      letter-spacing:{{ razmakizmedjuslovaPelement }}px;
+    {% endif %} 
+}
+
+  
+#{{sectionID}} .carouselTitles .UX-custom-paragraph {
+  padding: {{preduslovzaPelementPadingGornji}}px {{preduslovzaPelementPadingDesni}}px {{preduslovzaPelementPadingDonji}}px {{preduslovzaPelementPadingLevi}}px!important;               
+}
+
+  
+/* HEADING TEXT INSIDE THE CARD*/
+  {% if kastomfontHkartica %} 
+ {{ difoltnifontHkartica | font_face }} 
+ {% endif %} 
+  
+#{{sectionID}} .swiper-slide.card .ux-text .section-title-card {
+  width:100%;
+{% if kastomfontHkartica %} 
+   {% if imefontaHkartica != blank %} 
+     font-family:{{ imefontaHkartica }}; 
+     {% else %} font-family:{{ difoltnifontHkartica.family}}, {{ difoltnifontHkartica.fallback_families }}; 
+  {% endif %} 
+{%endif%} 
+  
+{% if debljinafontaHkartica != "default" %}
+  font-weight: {{debljinafontaHkartica}} !important;
+{%endif%} 
+} 
+   
+#{{sectionID}} .swiper-slide.card .ux-text .section-title-card { 
+{% if velicinafontaracunarHkartica!= 0 %} 
+  font-size: {{ velicinafontaracunarHkartica }}px;
+{% endif %} 
+
+  {% if razmakizmedjuslovaracunarHkartica!= 0 %}
+    line-height:{{ razmakizmedjuslovaracunarHkartica }}px;
+  {% endif %} 
+    {% if razmakizmedjureciracunarHkartica!= 0 %}
+      letter-spacing:{{ razmakizmedjureciracunarHkartica }}px;
+    {% endif %}      
+}
+  
+#{{sectionID}} .swiper-slide.card .ux-text .section-title-card { 
+      color: {{bojaHtekstakartica}};
+}
+  
+#{{sectionID}} .swiper-slide.card .ux-text .section-title-card {
+  padding: {{preduslovzaHelementPaddingGornjikartica}}px  {{preduslovzaHelementPaddingDesnikartica}}px  {{preduslovzaHelementPaddingDonjikartica}}px {{preduslovzaHelementPaddingLevikartica}}px;              
+}
+  
+#{{sectionID}} .swiper-slide.card .ux-text {
+    width: 100%;
+}
+  
+  #{{sectionID}} .swiper-slide.card .ux-text .section-title-card {
+     text-align: {{ pozicioniranjeHelementakartica }};
+}
+
+{% if kastomPfontkartica %} 
+      {{ difoltnifontzaPkartica | font_face }} 
+      {% endif %} 
+  
+#{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card > p {
+       width: 100%;   
+  text-align: {{ pozicioniranjePelementakartica }};
+{% if kastomPfontkartica %} 
+   {% if imefontaPelementakartica != blank %} 
+     font-family:{{ imefontaPelementakartica }}; 
+   {% else %} font-family:{{ difoltnifontzaPkartica.family}}, {{ difoltnifontzaPkartica.fallback_families }}; 
+    {% endif %} 
+{%endif%} 
+}
+                  
+#{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card { 
+{% if debljinafontaPelementakartica != "default" %}
+  font-weight: {{debljinafontaPelementakartica}} !important;
+{%endif%} 
+
+{% if bojatekstaPelementakartica contains '#' %} 
+  color:{{ bojatekstaPelementakartica }};
+{%endif%} 
+} 
+  
+#{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card {
+  width: 100%;
+}
+  
+
+  
+#{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card{ 
+{% if velicinafontaPelementakartica!= 0 %} 
+  font-size: {{ velicinafontaPelementakartica }}px;
+{% endif %} 
+
+  {% if razmakizmedjulinijaPfontkartica != 0 %}
+    line-height:{{ razmakizmedjulinijaPfontkartica }}px;
+  {% endif %} 
+    {% if razmakizmedjuslovaPelementkartica!= 0 %}
+      letter-spacing:{{ razmakizmedjuslovaPelementkartica }}px;
+    {% endif %} 
+}
+  
+#{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+  
+#{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card {
+  padding: {{preduslovzaPelementPadingGornjikartica}}px {{preduslovzaPelementPadingDesnikartica}}px {{preduslovzaPelementPadingDonjikartica}}px {{preduslovzaPelementPadingLevikartica}}px!important;               
+}
+  
+/*BUTTON*/
+{% if kastomFontDugme %} 
+  {{ difoltnifontzaButton | font_face }}
+{% endif %}
+#{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-btn{ 
+{% if kastomFontDugme %} 
+  {% if imefontaButtonelementa != blank %} 
+    font-family:{{ imefontaButtonelementa }}!important; 
+    {% else %} font-family:{{ difoltnifontzaButton.family }}, {{ difoltnifontzaButton.fallback_families }}; 
+   {% endif %} 
+  {% endif %} 
+}
+  
+#{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+      margin-top: {{dugmeMarginaGornja}}px !important;
+      margin-bottom: {{dugmeMarginaDonja}}px !important;
+      margin-left: {{dugmeMarginaLeva}}px !important;
+      margin-right: {{dugmeMarginaDesna}}px !important; 
+}
+
+
+    
+#{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-btn {  
+
+{% if debljinaFontaDugme != "default" %} 
+  font-weight:{{ debljinaFontaDugme }} !important;
+{%endif%} 
+
+  
+  color:{{ dugmeBojateksta }};
+  background-color:{{ dugmeBojaPozadine }}; 
+  
+   {% if dugmeBorder != '0px' %} 
+     border: {{ dugmeBorder }}px solid {{ dugmeBorderBoja }}; 
+   {% endif %} 
+  
+     border-radius:{{ dugmeBorderRadius }}px; 
+     padding:{{ dugmePadingVertikalni }}px {{ dugmePadingHorizontalni }}px; 
+     margin-bottom:0!important; line-height:initial!important; 
+
+  {% if DugmeVelicinaFonta != '0px' %}
+      font-size:{{ DugmeVelicinaFonta }}px;
+    {% endif %}
+    
+       {% if dugmeRazmakIzmedjuSlova != '0px' %}
+         letter-spacing:{{ dugmeRazmakIzmedjuSlova }}px;
+      {% endif %} 
+} 
+    
+#{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-btn:hover {
+    color:{{ dugmeBojatekstaHover }}; 
+    background-color:{{ dugmeBojaPozadineHover }};
+    {% if dugmeBorder != '0' %}
+    border-color:{{ dugmeBorderBojaHover }};
+    {% endif %} 
+}
+     
+       {% if section.settings.section_button_alignment == 'left' %}
+       #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+         align-self: start;
+       } 
+         {% elsif section.settings.section_button_alignment == 'center' %}
+         #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+         align-self: center;
+       }
+         {% elsif section.settings.section_button_alignment == 'right' %}
+         #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+         align-self: end;
+       }
+         {% endif %}
+
+  
+
+#{{sectionID}} .swiper-slide.card .UXfeature-row__text-button a {
+  text-decoration: none;
+}
+
+    }
+
+   @media only screen and (min-width: 769px) and (max-width: 1200px) {
+   #{{sectionID}} .carouselTitles .section-title, #{{sectionID}} .subheadline, #{{sectionID}} .carouselTitles .UX-custom-paragraph  {
+  min-width:400px!important;
+}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+   #{{sectionID}} .carouselTitles .section-title, #{{sectionID}} .carouselTitles .subheadline, #{{sectionID}} .carouselTitles .UX-custom-paragraph {
+  min-width: 500px!important;
+}}
+/*MOBILE PHONE STYLES*/
+
+
+@media only screen and (max-width: 769px){
+
+
+
+
+  
+ {% if pozicijaStrelicaMobilni == "center" %}
+#{{sectionID}} .swiper-button-next.middle, .swiper-button-prev.middle{
+  opacity: 0.7;
+  color: {{ bojaStrelicaMobilni }};
+  transition: all 0.3s ease;
+  display: inline-flex;
+ 
+}
+   #{{sectionID}} .swiper-button-next.middle::after, .swiper-button-prev.middle::after{
+     font-size: {{velicinaStrelicaMobilni}}px;
+     color: {{ bojaStrelicaMobilni }};
+  }
+#{{sectionID}} .swiper-button-next.middle:hover, .swiper-button-prev.middle:hover{
+  opacity: 1;
+}
+#{{sectionID}} .swiper-button-next.bottom, .swiper-button-prev.bottom {
+  display: none;
+}
+
+  {% else pozicijaStrelicaMobilni == "under" %}
+   .swiper-button-prev.bottom {
+    position: relative;
+     right: {{distancaStrelicaMobilni}}%;
+     left: unset;
+     
+   }
+
+   .swiper-button-next.bottom {
+     position: relative;
+     left: {{distancaStrelicaMobilni}}%;
+     right: unset;
+   }
+   #{{sectionID}} .swiper-button-next.bottom, .swiper-button-prev.bottom {
+  opacity: 0.7;
+  color: {{ bojaStrelicaMobilni }};
+  transition: all 0.3s ease;
+  display: inline-flex;
+}
+  #{{sectionID}} .swiper-button-next.bottom::after, .swiper-button-prev.bottom::after{
+     font-size: {{velicinaStrelicaMobilni}}px;
+  }
+#{{sectionID}} .swiper-button-next.bottom:hover, .swiper-button-prev.bottom:hover {
+  opacity: 1;
+}
+
+  #{{sectionID}} .swiper-button-next.middle, .swiper-button-prev.middle {
+  display: none;
+}
+  {% endif %}
+
+
+
+
+  
+
+  
+
+    #{{sectionID}} .card{
+      position: relative;
+      background: #fff;
+      border-radius: 20px;
+      height: -webkit-fill-available;
+      margin: 20px 0;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      background-color: {{ bojapozadineunutraMobilni }};
+      overflow: hidden; 
+    }
+      
+     #{{ sectionID}} { 
+       background-color: {{ bojapozadinesekcijeMobilni }};
+       }
+    
+      
+    
+    
+    /*STYLE FOR HEADLINE SUBHEADLINE AND BUTTON FIRST PART BEFORE CARD PART*/
+    /*HEADLINE*/
+    {% if kastomfontHMobilni %} 
+     {{ difoltnifontHMobilni | font_face}} 
+     {% endif %} 
+      
+    #{{sectionID}} section .carouselTitles .section-title {
+      
+    {% if kastomfontHMobilni %} 
+       {% if imefontaHMobilni != blank %} 
+         font-family:{{ imefontaHMobilni }}; 
+         {% else %} font-family:{{ difoltnifontHMobilni.family }}, {{ difoltnifontHMobilni.fallback_families }}; 
+      {% endif %} 
+    {%endif%} 
+      
+    {% if debljinafontaHMobilni != "default" %}
+      font-weight: {{debljinafontaHMobilni }} !important;
+    {%endif%} 
+    } 
+      
+    #{{sectionID}} section .carouselTitles .section-title { 
+    {% if velicinafontaracunarHMobilni != 0 %} 
+      font-size: {{ velicinafontaracunarHMobilni }}px;
+    {% endif %} 
+    
+      {% if razmakizmedjuslovaracunarHMobilni != 0 %}
+        line-height:{{ razmakizmedjuslovaracunarHMobilni }}px;
+      {% endif %} 
+        {% if razmakizmedjureciracunarHMobilni != 0 %}
+          letter-spacing:{{ razmakizmedjureciracunarHMobilni }}px;
+        {% endif %}      
+    }
+      
+    #{{sectionID}} section .carouselTitles .section-title { 
+          color: {{bojaHtekstaMobilni }};
+    }
+      
+    #{{sectionID}} section .carouselTitles .section-title {
+      padding: {{preduslovzaHelementPaddingGornjiMobilni }}px  {{preduslovzaHelementPaddingDesniMobilni }}px  {{preduslovzaHelementPaddingDonjiMobilni }}px {{preduslovzaHelementPaddingLeviMobilni }}px;              
+    }
+      
+    #{{sectionID}} section .carouselTitles div {
+        width: 100%;
+    }
+      
+    #{{sectionID}} section .carouselTitles div .section-title {
+         text-align: {{ pozicioniranjeHelementaMobilni }};
+    }
+     
+     
+    /*SUBHEADLINE */
+     {% if kastomfontHSubheadlineMobilni  %} 
+      {{ difoltnifontHSubheadlineMobilni  | font_face}}
+       {% endif %}
+      
+    
+    #{{sectionID}} .carouselTitles .subheadlineContainer .subheadline {
+      
+      {% if kastomfontHSubheadlineMobilni  %} 
+         {% if imefontaHSubheadlineMobilni  != blank %} 
+           font-family:{{ imefontaHSubheadlineMobilni }}; 
+           {% else %} font-family:{{ difoltnifontHSubheadlineMobilni.family }}, {{ difoltnifontHSubheadlineMobilni.fallback_families }}; 
+          {% endif %} 
+        {%endif%} 
+      
+    }   
+      
+    #{{sectionID}} .carouselTitles .subheadlineContainer .subheadline {
+        {% if debljinafontaHSubheadlineMobilni  != "default" %}
+          font-weight: {{debljinafontaHSubheadlineMobilni }} !important;
+        {%endif%} 
+            
+        {% if bojaHtekstaSubheadlineMobilni  contains '#' %} 
+          color:{{ bojaHtekstaSubheadlineMobilni }};
+        {% endif %} 
+    } 
+      
+    #{{sectionID}} .subheadlineContainer .subheadline {
+      padding: {{preduslovzaHelementPaddingGornjiSubheadlineMobilni }}px  {{preduslovzaHelementPaddingDesniSubheadlineMobilni }}px  {{preduslovzaHelementPaddingDonjiSubheadlineMobilni }}px {{preduslovzaHelementPaddingLeviSubheadlineMobilni }}px;              
+    }
+      
+    #{{sectionID}} .carouselTitles:nth-child(1) .subheadline {
+            {% if velicinafontaracunarHSubheadlineMobilni != 0 %} 
+              font-size: {{ velicinafontaracunarHSubheadlineMobilni }}px;
+            {% endif %} 
+            
+              {% if razmakizmedjuslovaracunarHSubheadlineMobilni != 0 %}
+                line-height:{{ razmakizmedjuslovaracunarHSubheadlineMobilni }}px;
+              {% endif %} 
+                {% if razmakizmedjureciracunarHSubheadlineMobilni != 0 %}
+                  letter-spacing:{{ razmakizmedjureciracunarHSubheadlineMobilni }}px;
+                {% endif %}     
+    }
+      
+    #{{sectionID}} .carouselTitles:nth-child(1){
+      width: 100%;
+    }
+      
+    #{{sectionID}} .carouselTitles:nth-child(1) .subheadline {
+        text-align: {{ pozicioniranjeHelementaSubheadlineMobilni }};
+    }
+      
+    /*PARAGRAPH*/
+    {% if kastomPfontMobilni %} 
+          {{ difoltnifontzaPMobilni | font_face}} 
+          {% endif %} 
+      
+    #{{sectionID}} .carouselTitles .UX-custom-paragraph > p {
+                      
+    {% if kastomPfontMobilni %} 
+       {% if imefontaPelementaMobilni != blank %} 
+         font-family:{{ imefontaPelementaMobilni }}; 
+       {% else %} font-family:{{ difoltnifontzaPMobilni.family }}, {{ difoltnifontzaPMobilni.fallback_families }}; 
+        {% endif %} 
+    {%endif%} 
+    }
+                      
+    #{{sectionID}} .carouselTitles .UX-custom-paragraph { 
+    {% if debljinafontaPelementaMobilni != "default" %}
+      font-weight: {{debljinafontaPelementaMobilni }} !important;
+    {%endif%} 
+       text-align: {{ pozicioniranjePelementaMobilni }};
+    {% if bojatekstaPelementaMobilni contains '#' %} 
+      color:{{ bojatekstaPelementaMobilni }};
+    {%endif%} 
+    } 
+      
+    #{{sectionID}} .carouselTitles .UX-custom-paragraph {
+      width: 100%;
+    }
+    
+    #{{sectionID}} .carouselTitles .UX-custom-paragraph{ 
+    {% if velicinafontaPelementaMobilni != 0 %} 
+      font-size: {{ velicinafontaPelementaMobilni }}px;
+    {% endif %} 
+    
+      {% if razmakizmedjulinijaPfontMobilni != 0 %}
+        line-height:{{ razmakizmedjulinijaPfontMobilni }}px;
+      {% endif %} 
+        {% if razmakizmedjuslovaPelementMobilni != 0 %}
+          letter-spacing:{{ razmakizmedjuslovaPelementMobilni }}px;
+        {% endif %} 
+    }
+    
+      
+    #{{sectionID}} .carouselTitles .UX-custom-paragraph {
+      padding: {{preduslovzaPelementPadingGornjiMobilni }}px {{preduslovzaPelementPadingDesniMobilni }}px {{preduslovzaPelementPadingDonjiMobilni }}px {{preduslovzaPelementPadingLeviMobilni }}px!important;               
+    }
+    
+      
+    /* HEADING TEXT INSIDE THE CARD*/
+      {% if kastomfontHkarticaMobilni %} 
+     {{ difoltnifontHkarticaMobilni | font_face}} 
+     {% endif %} 
+      
+    #{{sectionID}} .swiper-slide.card .ux-text .section-title-card {
+      width:100%;
+    {% if kastomfontHkarticaMobilni %} 
+       {% if imefontaHkarticaMobilni != blank %} 
+         font-family:{{ imefontaHkarticaMobilni }}; 
+         {% else %} font-family:{{ difoltnifontHkarticaMobilni.family }}, {{ difoltnifontHkarticaMobilni.fallback_families }}; 
+      {% endif %} 
+    {%endif%} 
+      
+    {% if debljinafontaHkarticaMobilni != "default" %}
+      font-weight: {{debljinafontaHkarticaMobilni }} !important;
+    {%endif%} 
+    } 
+       
+    #{{sectionID}} .swiper-slide.card .ux-text .section-title-card { 
+    {% if velicinafontaracunarHkarticaMobilni != 0 %} 
+      font-size: {{ velicinafontaracunarHkarticaMobilni }}px;
+    {% endif %} 
+    
+      {% if razmakizmedjuslovaracunarHkarticaMobilni != 0 %}
+        line-height:{{ razmakizmedjuslovaracunarHkarticaMobilni }}px;
+      {% endif %} 
+        {% if razmakizmedjureciracunarHkarticaMobilni != 0 %}
+          letter-spacing:{{ razmakizmedjureciracunarHkarticaMobilni }}px;
+        {% endif %}      
+    }
+      
+    #{{sectionID}} .swiper-slide.card .ux-text .section-title-card { 
+          color: {{bojaHtekstakarticaMobilni }};
+    }
+      
+    #{{sectionID}} .swiper-slide.card .ux-text .section-title-card {
+      padding: {{preduslovzaHelementPaddingGornjikarticaMobilni }}px  {{preduslovzaHelementPaddingDesnikarticaMobilni }}px  {{preduslovzaHelementPaddingDonjikarticaMobilni }}px {{preduslovzaHelementPaddingLevikarticaMobilni }}px;              
+    }
+      
+    #{{sectionID}} .swiper-slide.card .ux-text {
+        width: 100%;
+    }
+      
+      #{{sectionID}} .swiper-slide.card .ux-text .section-title-card {
+         text-align: {{ pozicioniranjeHelementakarticaMobilni }};
+    }
+    
+    {% if kastomPfontkarticaMobilni %} 
+          {{ difoltnifontzaPkarticaMobilni | font_face}} 
+          {% endif %} 
+      
+    #{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card > p {
+           width: 100%;   
+      text-align: {{ pozicioniranjePelementakarticaMobilni }};
+    {% if kastomPfontkarticaMobilni %} 
+       {% if imefontaPelementakarticaMobilni != blank %} 
+         font-family:{{ imefontaPelementakarticaMobilni }}; 
+       {% else %} font-family:{{ difoltnifontzaPkarticaMobilni.family }}, {{ difoltnifontzaPkarticaMobilni.fallback_families }}; 
+        {% endif %} 
+    {%endif%} 
+    }
+                      
+    #{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card { 
+    {% if debljinafontaPelementakarticaMobilni != "default" %}
+      font-weight: {{debljinafontaPelementakarticaMobilni }} !important;
+    {%endif%} 
+    
+    {% if bojatekstaPelementakarticaMobilni contains '#' %} 
+      color:{{ bojatekstaPelementakarticaMobilni }};
+    {%endif%} 
+    } 
+      
+    #{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card {
+      width: 100%;
+    }
+      
+    
+      
+    #{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card{ 
+    {% if velicinafontaPelementakarticaMobilni != 0 %} 
+      font-size: {{ velicinafontaPelementakarticaMobilni }}px;
+    {% endif %} 
+    
+      {% if razmakizmedjulinijaPfontkarticaMobilni != 0 %}
+        line-height:{{ razmakizmedjulinijaPfontkarticaMobilni }}px;
+      {% endif %} 
+        {% if razmakizmedjuslovaPelementkarticaMobilni != 0 %}
+          letter-spacing:{{ razmakizmedjuslovaPelementkarticaMobilni }}px;
+        {% endif %} 
+    }
+      
+    #{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+    }
+      
+    #{{sectionID}} .swiper-slide.card div .UX-custom-paragraph-card {
+      padding: {{preduslovzaPelementPadingGornjikarticaMobilni }}px {{preduslovzaPelementPadingDesnikarticaMobilni }}px {{preduslovzaPelementPadingDonjikarticaMobilni }}px {{preduslovzaPelementPadingLevikarticaMobilni }}px!important;               
+    }
+      
+    /*BUTTON*/
+    {% if kastomFontDugmeMobilni %} 
+      {{ difoltnifontzaButtonMobilni | font_face}}
+    {% endif %}
+    #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-btn{ 
+    {% if kastomFontDugmeMobilni %} 
+      {% if imefontaButtonelementaMobilni != blank %} 
+        font-family:{{ imefontaButtonelementaMobilni }}!important; 
+        {% else %} font-family:{{ difoltnifontzaButtonMobilni.family }}, {{ difoltnifontzaButtonMobilni.fallback_families }}; 
+       {% endif %} 
+      {% endif %} 
+    }
+      
+    #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-button {
+          margin-top: {{dugmeMarginaGornjaMobilni }}px !important;
+          margin-bottom: {{dugmeMarginaDonjaMobilni }}px !important;
+          margin-left: {{dugmeMarginaLevaMobilni }}px !important;
+          margin-right: {{dugmeMarginaDesnaMobilni }}px !important; 
+    }
+    
+    
+#{{sectionID}} img.ux-image {
+  width: 100%;
+    {% if sirinaSlike == 'square' %}
+  width: 200px;
+  aspect-ratio: 1;
+
+  {% elsif sirinaSlike == 'portrait' %}
+  width: 100px;
+  height:200px;
+  object-fit: scale-down;
+      {% elsif sirinaSlike == 'landscape' %}
+  width: 200px;
+  height:100px;
+  object-fit: cover;
+      {% endif %}
+  background-size: contain!important; 
+  background-repeat: no-repeat!important;
+  background-position: center!important;
+}
+        
+    #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-btn {  
+    
+    {% if debljinaFontaDugmeMobilni != "default" %} 
+      font-weight:{{ debljinaFontaDugmeMobilni }} !important;
+    {%endif%} 
+    
+      
+      color:{{ dugmeBojatekstaMobilni }};
+      background-color:{{ dugmeBojaPozadineMobilni }}; 
+      
+       {% if dugmeBorderMobilni != '0px' %} 
+         border: {{ dugmeBorderMobilni }}px solid {{ dugmeBorderBojaMobilni }}; 
+       {% endif %} 
+      
+         border-radius:{{ dugmeBorderRadiusMobilni }}px; 
+         padding:{{ dugmePadingVertikalniMobilni }}px {{ dugmePadingHorizontalniMobilni }}px; 
+         margin-bottom:0!important; line-height:initial!important; 
+    
+      {% if DugmeVelicinaFontaMobilni != '0px' %}
+          font-size:{{ DugmeVelicinaFontaMobilni }}px;
+        {% endif %}
+        
+           {% if dugmeRazmakIzmedjuSlova != '0px' %}
+             letter-spacing:{{ dugmeRazmakIzmedjuSlovaMobilni }}px;
+          {% endif %} 
+    } 
+        
+    #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button .ux-btn:hover {
+        color:{{ dugmeBojatekstaHoverMobilni }}; 
+        background-color:{{ dugmeBojaPozadineHoverMobilni }};
+        {% if dugmeBorderMobilni != '0' %}
+        border-color:{{ dugmeBorderBojaHoverMobilni }};
+        {% endif %} 
+    }
+         
+           {% if section.settings.section_button_alignment == 'left' %}
+           #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+             align-self: start;
+           } 
+             {% elsif section.settings.section_button_alignment == 'center' %}
+             #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+             align-self: center;
+           }
+             {% elsif section.settings.section_button_alignment == 'right' %}
+             #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button {
+             align-self: end;
+           }
+             {% endif %}
+    
+      
+    
+    #{{sectionID}} .swiper-slide.card .UXfeature-row__text-button a {
+      text-decoration: none;
+    }
+
+
+
+
+
+
+
+#{{ sectionID}} {
+    margin: {{ podesavanjegornjemarginesekcijacelaMobilni}}px auto {{ podesavanjedonjemarginesekcijacelaMobilni}}px auto ;
+  padding: {{ podesavanjegornjegpadingacelasekcijaMobilni}}px {{ horizontalnipadingcelasekcijaMobilni}}px {{ podesavanjedonjegpadingacelasekcijaMobilni}}px; 
+
+}  
+
+#{{sectionID}} section .carouselTitles {
+display: flex;
+width: 100%;
+flex-wrap: wrap;
+flex-direction: column;
+align-content: center;
+}
+
+#{{sectionID}} {
+width: {{maksSirinaKontentaMobilni}}%;
+max-width: 100%;
+}
+
+
+
+#{{sectionID}} .card .card-content{
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+z-index: 100;
+height: 100%;
+}
+
+
+#{{sectionID}} div.ux-image {
+width: 100%;
+height: {{sirinaSlikeMobilni}}%;
+max-height: 200px;
+background-size: contain!important; 
+background-repeat: no-repeat!important;
+background-position: center!important;}
+
+}
+
+#{{sectionID}}  .ux-text, #{{sectionID}}  .ux-button {
+--duzinatextidugme: calc(400px - {{sirinaSlike}}%);
+height: calc(var(--duzinatextidugme)/2);
+}
+
+#{{sectionID}} section .card .ux-image img{
+width: {{sirinaSlike}};
+border: 3px solid #fff;
+} 
+
+#{{sectionID}} .card .ux-text{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 20px;
+color: black;
+} 
+
+#{{sectionID}} .ux-text .heading{
+font-size: 20px;
+font-weight: 600;
+}
+
+#{{sectionID}} .card .ux-button{
+display: flex;
+justify-content: center;
+padding-top: 20px;
+flex-direction: column;
+
+}
+
+#{{sectionID}} .card .ux-button button{
+background: #7d2ae8;
+outline: none;
+border: none;
+color: #fff;
+padding: 8px 22px;
+border-radius: 10px;
+font-size: 14px;
+transition: all 0.3s ease;
+cursor: pointer;
+}
+
+#{{sectionID}} .ux-button button:hover{
+background: #6616d0;
+}
+
+#{{sectionID}} .swiper-pagination{
+position: absolute;
+top: 450px;
+}
+
+#{{sectionID}} .swiper-pagination-bullet{
+height: 7px;
+width: 26px;
+border-radius: 25px;
+background: black;
+}
+
+        }
+    
+       @media only screen and (max-width: 769px) and (min-width: 1200px) {
+       #{{sectionID}} .carouselTitles .section-title, #{{sectionID}} .subheadline, #{{sectionID}} .carouselTitles .UX-custom-paragraph  {
+      min-width:400px!important;
+    }}
+    @media only screen and (max-width: 1200px) and (min-width: 1600px) {
+       #{{sectionID}} .carouselTitles .section-title, #{{sectionID}} .carouselTitles .subheadline, #{{sectionID}} .carouselTitles .UX-custom-paragraph {
+      min-width: 500px!important;
+}}
+{%- endstyle -%}
+
